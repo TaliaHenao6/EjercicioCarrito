@@ -3,10 +3,12 @@ import './App.css'
 import Productos from './componentes/Productos'
 import Carrito from './componentes/Carrito'
 import Login from './componentes/Login'
+import  useState from 'react'
 
 function App() {
- 
 
+  // const [carrito, useState] = useState([]);
+ 
   return (
     <>
       <BrowserRouter>

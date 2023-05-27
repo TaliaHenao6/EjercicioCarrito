@@ -6,6 +6,10 @@ import { useState } from "react";
 //import product3Image from '../images/product3.jpg';
 
 const Productos = () =>{
+
+      
+
+
       return (
         <>
         <h1>Lista de Productos</h1>

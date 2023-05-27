@@ -28,3 +28,11 @@ img{
 .item{
     margin-bottom: 25px;
 }
+
+
+.liked{
+    cursor: pointer;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+}

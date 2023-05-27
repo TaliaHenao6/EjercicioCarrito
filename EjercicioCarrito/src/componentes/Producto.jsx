@@ -1,17 +1,27 @@
-import { Button } from "@mui/material";
+import { Button, BottomNavigationAction } from "@mui/material";
 import AddShoppingCartIcon  from '@mui/icons-material/AddShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
+import Favorite from "./Heart";
+import { useContext } from "react";
+
+import Carrito from "./Carrito";
 import "./Styles.css";
 
 const Producto = ({infoProducto}) =>{
 
+    // const { addToCart } = useContext(Carrito); 
 
-    console.log(infoProducto);
+    const handleAddToCarrito = (infoProducto) => { 
+        alert(`Producto ${infoProducto.id} añadido a la lista: ${infoProducto.nombre}`);
+        // addToCart(infoProducto); 
+    }
+
     return (
             <>
             <Card sx={{ maxWidth: 345 }} className="item">
@@ -24,7 +34,8 @@ const Producto = ({infoProducto}) =>{
                     <p className="description">{infoProducto.descripcion}</p>
                 </CardContent>
                 <CardActions>
-                    <Button variant="contained" color="secondary" startIcon={<AddShoppingCartIcon />}>Agregar al carrito</Button>
+                    <Button variant="contained" color="secondary" startIcon={<AddShoppingCartIcon />} onClick={() => handleAddToCarrito(infoProducto)} >Agregar al carrito</Button>
+                    <Favorite infoProducto={infoProducto.nombre}/>
                 </CardActions>
             </Card>
             </>
