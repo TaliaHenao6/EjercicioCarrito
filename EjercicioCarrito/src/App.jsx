@@ -15,6 +15,7 @@ function App() {
 
     const [carrito, setCarrito] = useState([]);
 
+    // Agregamos al carrito
       const addToCar = (infoProducto) =>{
         console.log("El producto es:" + infoProducto.nombre);
 
@@ -36,6 +37,25 @@ function App() {
         // console.log(`Productos en carrito ${carrito}`);
       }
 
+      // Quitamos producto del carrito
+      const removeToCar =(infoProducto) =>{
+        console.log("vamos a eliminar un producto:" + infoProducto.nombre);
+
+          if(carrito.find(x => x.nombre === infoProducto.nombre)){
+          const nuevoCarrito = carrito.map(x => x.nombre  === infoProducto.nombre
+            ? ({
+              ...x, 
+              cantidad: x.cantidad - 1
+            })
+             :x) 
+             setCarrito(nuevoCarrito)
+        }
+        else{
+          setCarrito(carrito.concat({...infoProducto, cantidad: -1}))
+        }
+
+      }
+      console.log(carrito.length);
       const [carritoVisible, setCarritoVisible] = useState(true);
 
       const toggleCarrito = (carrito) =>{
@@ -57,7 +77,7 @@ function App() {
         </ul>
       </div>
         <Routes>
-          <Route exact path="/" element={<Productos ListaProductos={ListaProductos}/>}/>
+          <Route exact path="/" element={<Productos ListaProductos={ListaProductos} addToCar={addToCar} removeToCar={removeToCar}/>}/>
           <Route exact path="/Carrito" element={<Carrito/>}/>
           <Route exact path="/Login" element={<Login/>}/>
         </Routes>
