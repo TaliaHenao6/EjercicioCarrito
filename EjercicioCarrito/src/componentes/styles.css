@@ -4,6 +4,23 @@ img{
     background-position: center;
 }
 
+.header ul {
+    width: 150%;
+    display: flex;
+    justify-content: right;
+    gap: 55px;
+    line-height: 20px;
+    list-style: none;
+}
+
+.header ul li {
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: initial;
+    font-weight: 600;
+
+}
+
 .name{
     text-transform: uppercase;
     font-size: 1.5em;

@@ -69,11 +69,11 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <div className='nav'>
+      <div className='header'>
         <ul>
-          <li><Link to="/"><Home/> Home</Link></li>
+          <li><Link to="/"><Home/></Link></li>
           <li><Link to="/Carrito"><NavCarrito/></Link></li>
-          <li><Link to="/Login"><Person2Outlined/> Login</Link></li>
+          <li><Link to="/Login"><Person2Outlined/></Link></li>
         </ul>
       </div>
         <Routes>
