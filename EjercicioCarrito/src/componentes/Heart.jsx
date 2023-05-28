@@ -14,6 +14,7 @@ const Heart =()=>{
             // console.log(`se quito de favoritos! ${infoProducto.nombre}`);
         }else{
             setLike(true);
+            
             // console.log(`Se agrego a favoritos ${infoProducto.nombre}`);
         }
         // Operador ternarios

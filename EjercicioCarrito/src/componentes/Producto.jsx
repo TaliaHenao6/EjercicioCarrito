@@ -11,16 +11,10 @@ import Favorite from "./Heart";
 import { useContext } from "react";
 
 import Carrito from "./Carrito";
-import "./Styles.css";
+import "./styles.css";
 
-const Producto = ({infoProducto}) =>{
+const Producto = ({infoProducto, addToCar, addWishList}) =>{
 
-    // const { addToCart } = useContext(Carrito); 
-
-    const handleAddToCarrito = (infoProducto) => { 
-        alert(`Producto ${infoProducto.id} añadido a la lista: ${infoProducto.nombre}`);
-        // addToCart(infoProducto); 
-    }
 
     return (
             <>
@@ -34,7 +28,7 @@ const Producto = ({infoProducto}) =>{
                     <p className="description">{infoProducto.descripcion}</p>
                 </CardContent>
                 <CardActions>
-                    <Button variant="contained" color="secondary" startIcon={<AddShoppingCartIcon />} onClick={() => handleAddToCarrito(infoProducto)} >Agregar al carrito</Button>
+                    <Button variant="contained" color="secondary" startIcon={<AddShoppingCartIcon />} onClick={() => addToCar(infoProducto)} >Agregar al carrito</Button>
                     <Favorite infoProducto={infoProducto.nombre}/>
                 </CardActions>
             </Card>
