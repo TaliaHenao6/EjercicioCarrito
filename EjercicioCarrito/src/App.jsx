@@ -33,29 +33,37 @@ function App() {
         }
 
         // setCarrito(infoProducto);
-        // console.log(`Productos en carrito ${carrito.length}`);
-        // console.log(`Productos en carrito ${carrito}`);
+       
       }
 
       // Quitamos producto del carrito
-      const removeToCar =(infoProducto) =>{
+      const removeToCar =(infoProducto ) =>{
         console.log("vamos a eliminar un producto:" + infoProducto.nombre);
 
-          if(carrito.find(x => x.nombre === infoProducto.nombre)){
-          const nuevoCarrito = carrito.map(x => x.nombre  === infoProducto.nombre
-            ? ({
-              ...x, 
-              cantidad: x.cantidad - 1
-            })
-             :x) 
-             setCarrito(nuevoCarrito)
+          if(carrito.find(item => item.id === infoProducto.id)?.cantidad === 1){
+            return carrito.filter(item => item.id !== infoProducto.id)
+          }else{
+            return carrito.map(item => {
+              if(item.id === infoProducto.id){
+                return {...infoProducto, cantidad : item.cantidad -1};
+              }else{
+                return item;
+              }
+            });
+
+            // setCarrito(carrito.concat({...infoProducto, cantidad: 1}))
+          // const nuevoCarrito = carrito.map(x => x.nombre  === infoProducto.nombre
+          //   ? ({
+          //     ...x, 
+          //     cantidad: x.cantidad - 1
+          //   })
+          //    :x) 
+          //    setCarrito(nuevoCarrito)
         }
-        else{
-          setCarrito(carrito.concat({...infoProducto, cantidad: -1}))
-        }
+        
 
       }
-      console.log(carrito.length);
+      
       const [carritoVisible, setCarritoVisible] = useState(true);
 
       const toggleCarrito = (carrito) =>{
@@ -72,13 +80,21 @@ function App() {
       <div className='header'>
         <ul>
           <li><Link to="/"><Home/></Link></li>
-          <li><Link to="/Carrito"><NavCarrito/></Link></li>
+          <li>
+            <Link to="/Carrito">
+              <NavCarrito 
+              carrito={carrito} 
+              carritoVisible={carritoVisible}
+              toggleCarrito={toggleCarrito} 
+              />
+              </Link>
+          </li>
           <li><Link to="/Login"><Person2Outlined/></Link></li>
         </ul>
       </div>
         <Routes>
           <Route exact path="/" element={<Productos ListaProductos={ListaProductos} addToCar={addToCar} removeToCar={removeToCar}/>}/>
-          <Route exact path="/Carrito" element={<Carrito/>}/>
+          <Route exact path="/Carrito" element={<Carrito carrito={carrito}/>}/>
           <Route exact path="/Login" element={<Login/>}/>
         </Routes>
       </BrowserRouter>

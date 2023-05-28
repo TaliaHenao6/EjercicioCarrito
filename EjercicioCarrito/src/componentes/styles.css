@@ -53,3 +53,30 @@ img{
     align-items: center;
     justify-content: center;
 }
+
+/* Carrito */
+
+.carrito{
+    background-color: #359A2C;
+    color: #FFF;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.bubbleAlert{
+    background-color: #7B1FA2;
+    border-radius: 50px;
+    color: #FFF;
+    padding: 2px 8px;
+    font-size: 0.9rem;
+    width: 20px;
+}
+
+.bubble{
+    position: relative;
+    left: 55px;
+    top: -15px;
+    overflow: hidden;
+}
