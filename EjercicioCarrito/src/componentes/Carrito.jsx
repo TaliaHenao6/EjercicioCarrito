@@ -3,6 +3,8 @@ import ProductoCarrito from "./ProductoCarrito";
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 
+import "./styles.css";
+
 const Carrito = () => {
   const [carrito, setCarrito] = useContext(CarritoContext);
   // Mostrar un total de productos en el carrito
