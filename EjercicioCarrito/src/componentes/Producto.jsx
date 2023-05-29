@@ -95,7 +95,7 @@ const Producto = ({ infoProducto }) => {
             startIcon={<AddShoppingCartIcon />}
             onClick={() => addToCar(infoProducto)}
           >
-            Agregar
+            Add to card
           </Button>
 
           <Button
