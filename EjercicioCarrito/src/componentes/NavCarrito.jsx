@@ -28,12 +28,12 @@ const NavCarrito =()=>{
     // console.log(carritoVisible);
     return(
         <>
-        <Button className="carrito">
-            <span className="bubble">Cart Items:
+        <div className="carrito">
+            <ShoppingCart />
+            <span className="bubble">
                 {cantidad !== 0 ? <BubbleAlert value={cantidad}/> :null}
             </span>
-            <ShoppingCart />
-        </Button>
+        </div>
         
         
         </>
