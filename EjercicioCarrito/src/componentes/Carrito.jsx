@@ -25,12 +25,18 @@ const Carrito = () => {
     <>
       <div className="cart-container">
         <div>item en Carrito: {cantidad} </div>
-        <div className="precio-total"> ${totalPrice}</div>
-        {carrito.length > 0 ? 
-        carrito.map((producto , idx ) => <ProductoCarrito key={producto.idx} data={producto}/>) 
-        :<p>No Has agregado productos al carrito aún!.</p> 
-        }
-        
+        {carrito.length > 0 ? (
+          carrito.map((producto, idx) => (
+            <ProductoCarrito key={producto.idx} data={producto} />
+          ))
+        ) : (
+          <p>No Has agregado productos al carrito aún!.</p>
+        )}
+        <div className="precio-total">
+          <span>Total</span>${totalPrice}
+        </div>
+        <button>Vaciar Todos los productos</button>
+        <button>Pagar</button>
       </div>
     </>
   );
