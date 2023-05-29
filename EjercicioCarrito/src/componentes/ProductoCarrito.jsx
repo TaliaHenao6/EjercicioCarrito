@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 
 import { Button, BottomNavigationAction } from "@mui/material";
 import { Delete, AddShoppingCart } from "@mui/icons-material";
+import "./styles.css";
 
 const ProductoCarrito = ({data}) => {
     const cantidad = data.cantidad;
@@ -16,7 +17,7 @@ const ProductoCarrito = ({data}) => {
     console.log(data);
   return (
     <>
-      <div className="item">
+      <div className="item-carrito">
           <div className="item-img">
             <Avatar
               src={data.infoProducto.image}
