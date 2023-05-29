@@ -13,13 +13,12 @@ const Carrito = () => {
     0
   );
 
-  const ListaProductos = carrito;
-  console.log(carrito);
-
-  // if(ListaProductos.length == 0){
-  // }else{
-  //     console.log("No hay productos en el carrito");
-  // }
+  const cleanCart = ()=>{
+        if(confirm(`Tienes ${cantidad} productos en el carrito, ¿SEGURO QUE LOS QUIERES ELIMINAR?`)){
+            setCarrito([]); 
+            window.location.href = "/";
+        }
+  }
 
   return (
     <>
@@ -35,7 +34,7 @@ const Carrito = () => {
         <div className="precio-total">
           <span>Total</span>${totalPrice}
         </div>
-        <button>Vaciar Todos los productos</button>
+        <button onClick={() => cleanCart()}>Vaciar Todos los productos</button>
         <button>Pagar</button>
       </div>
     </>
