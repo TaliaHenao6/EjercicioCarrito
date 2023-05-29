@@ -21,9 +21,9 @@ function App() {
         <Router>
           <div className="header">
             <div className="Logo">
-              <Link to={"/"}>
-              <a href=""><img src="./src/assets/electrotop.png" alt="BackPackers" /></a>
-              </Link>
+              {/* <Link to={"/"}> */}
+                <a href={"/"}><img src="./src/assets/electrotop.png" alt="BackPackers" /></a>
+              {/* </Link> */}
             </div>
             <ul className="nav">
               <li>
