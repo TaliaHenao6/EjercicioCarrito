@@ -94,7 +94,18 @@ img{
 }
 
 .item{
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.item:hover{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+}
+.item:hover  .product-image{
+    transform: scale(1.1);
+    /* zoom: normal; */
 }
 
 

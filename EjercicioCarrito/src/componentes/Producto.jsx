@@ -68,7 +68,7 @@ const Producto = ({ infoProducto }) => {
         <p className="cantidad">cart: {cantidadXProducto}</p>
       )}
       <CardMedia sx={{ height: 140 }}>
-        <img src={infoProducto.image} alt={infoProducto.nombre} />
+        <img src={infoProducto.image} alt={infoProducto.nombre} className="product-image"/>
       </CardMedia>
       <CardContent>
         <h3 className="name">{infoProducto.nombre}</h3>
