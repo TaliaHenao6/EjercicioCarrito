@@ -1,4 +1,3 @@
-
 import ProductoCarrito from "./ProductoCarrito";
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
@@ -15,16 +14,20 @@ const Carrito = () => {
     0
   );
 
-  const formatPrice = (totalPrice) =>{
+  const formatPrice = (totalPrice) => {
     return totalPrice.toLocaleString("es-CO");
-  }
+  };
 
-  const cleanCart = ()=>{
-        if(confirm(`Tienes ${cantidad} productos en el carrito, ¿SEGURO QUE LOS QUIERES ELIMINAR?`)){
-            setCarrito([]); 
-            window.location.href = "/";
-        }
-  }
+  const cleanCart = () => {
+    if (
+      confirm(
+        `Tienes ${cantidad} productos en el carrito, ¿SEGURO QUE LOS QUIERES ELIMINAR?`
+      )
+    ) {
+      setCarrito([]);
+      window.location.href = "/";
+    }
+  };
 
   return (
     <>
@@ -40,13 +43,8 @@ const Carrito = () => {
         <div className="precio-total">
           <span>Total</span>$ {formatPrice(totalPrice)}
         </div>
-<<<<<<< HEAD
-        <button className="vaciar-carrito" onClick={() => cleanCart()}>Vaciar Carrito</button>
-        <button className="pagar">Pagar</button>
-=======
         <button onClick={() => cleanCart()}>Limpiar carrito</button>
         <button>Pagar</button>
->>>>>>> 8bf4c0f12be2bab0f940a2a90ab37e9d23db9633
       </div>
     </>
   );

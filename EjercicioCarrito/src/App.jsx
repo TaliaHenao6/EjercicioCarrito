@@ -4,6 +4,7 @@ import Productos from "./componentes/Productos";
 import Carrito from "./componentes/Carrito";
 import Login from "./componentes/Login";
 import NavCarrito from "./componentes/NavCarrito";
+import Register from "./componentes/Register";
 import Wishlist from "./componentes/Wishlist";
 
 import { Favorite, Home, Person2Outlined } from "@mui/icons-material";
@@ -61,6 +62,7 @@ function App() {
             <Route exact path="/Carrito" element={<Carrito />} />
             <Route exact path="/Favoritos" element={<Favorite />} />
             <Route exact path="/Login" element={<Login />} />
+            <Route exact path="/Register" element={<Register />} />
           </Routes>
         </Router>
       </CarritoProvider>

@@ -12,7 +12,6 @@ import Favorite from "./Heart";
 
 const Producto = ({ infoProducto }) => {
   const [carrito, setCarrito] = useContext(CarritoContext);
-  const [favorito, setfavorito] = useContext(CarritoContext);
   const idProducto = infoProducto.id;
 
   const addToCar = () => {
