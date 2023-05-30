@@ -40,7 +40,7 @@ const Carrito = () => {
         <div className="precio-total">
           <span>Total</span>$ {formatPrice(totalPrice)}
         </div>
-        <button onClick={() => cleanCart()}>Vaciar Todos los productos</button>
+        <button onClick={() => cleanCart()}>Limpiar carrito</button>
         <button>Pagar</button>
       </div>
     </>
