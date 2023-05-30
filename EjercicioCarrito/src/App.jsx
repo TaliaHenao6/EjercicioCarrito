@@ -22,7 +22,7 @@ function App() {
           <div className="header">
             <div className="Logo">
               <Link to={"/"}>
-              <a href=""><img src="./src/assets/electrotop.png" alt="BackPackers" /></a>
+              <a href=""><img src="./src/assets/electrotop.png" alt="Electrotop" /></a>
               </Link>
             </div>
             <ul className="nav">

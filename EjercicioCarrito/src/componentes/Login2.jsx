@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-
 import './styles.css';
 
-const Login = () => {
+const Login2 = () => {
   const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
     email: '',
     password: ''
   });
   const [errors, setErrors] = useState({
+    name: '',
+    phone: '',
     email: '',
     password: ''
   });
@@ -23,6 +26,8 @@ const Login = () => {
     if (Object.keys(newErrors).length === 0) {
       setSuccessMessage('Formulario enviado con éxito');
       setFormData({
+        name: '',
+        phone: '',
         email: '',
         password: ''
       });
@@ -38,6 +43,12 @@ const Login = () => {
     const errors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    if (!data.name) {
+      errors.name = 'Por favor, ingresa tu nombre';
+    }
+    if (!data.phone) {
+        errors.phone = 'Por favor, ingresa tu teléfono';
+      }
 
     if (!data.email) {
       errors.email = 'Por favor, ingresa tu correo electrónico';
@@ -56,11 +67,34 @@ const Login = () => {
 
   return (
     <div className="container">
-    <h1>Iniciar Sesión</h1>
+    <h1>Crea una cuenta</h1>
       <form onSubmit={handleSubmit}>
-       
         <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label><br />
+          <label htmlFor="name">Nombre:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            placeholder='Escribe tu nombre'
+          />
+          {errors.name && <p className="error-message">{errors.name}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone">Phone:</label>
+          <input
+            type="number"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+            placeholder='Escribe tu teléfono'
+          />
+          {errors.phone && <p className="error-message">{errors.phone}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Correo Electrónico:</label>
           <input
             type="email"
             id="email"
@@ -72,7 +106,7 @@ const Login = () => {
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="password">Contraseña:</label><br />
+          <label htmlFor="password">Contraseña:</label>
           <input
             type="password"
             id="password"
@@ -83,19 +117,13 @@ const Login = () => {
           />
           {errors.password && <p className="error-message">{errors.password}</p>}
         </div>
-        <button type="submit">Iniciar Sesión</button>
-        
+        <button type="submit">Registrarme</button>
       </form>
-      
       {successMessage && <p className="success-message">{successMessage}</p>}
-
-      <p className="">¿No tienes usuario para iniciar sesión?</p>
-      <button type="submit">Registrarme ahora</button>
     </div>
-
-    
   );
 };
 
 
-export default Login;
+
+export default Login2;

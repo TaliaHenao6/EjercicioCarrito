@@ -36,8 +36,8 @@ const Carrito = () => {
         <div className="precio-total">
           <span>Total</span>${totalPrice}
         </div>
-        <button onClick={() => cleanCart()}>Vaciar Todos los productos</button>
-        <button>Pagar</button>
+        <button className="vaciar-carrito" onClick={() => cleanCart()}>Vaciar Carrito</button>
+        <button className="pagar">Pagar</button>
       </div>
     </>
   );
