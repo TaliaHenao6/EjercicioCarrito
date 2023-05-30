@@ -54,7 +54,7 @@ const Register = () => {
       }
 
     if (!data.direccion) {
-        errors.direccion = 'Por favor, ingresa tu teléfono';
+        errors.direccion = 'Por favor, ingresa tu dirección';
       }
 
     if (!data.email) {
@@ -73,7 +73,7 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container2">
     <h1>Crea una cuenta</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -110,7 +110,7 @@ const Register = () => {
             onChange={handleInputChange}
             placeholder='Escribe tu dirección'
           />
-          {errors.name && <p className="error-message">{errors.name}</p>}
+          {errors.name && <p className="error-message">{errors.direccion}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico:</label>

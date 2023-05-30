@@ -206,11 +206,12 @@ align-items: center;
 
 /* Forms */
 .container {
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
   }
 
 .form-group {
+    
     margin-bottom: 20px;
   }
   
@@ -241,4 +242,9 @@ align-items: center;
   
 .success-message {
     color: green;
+  }
+
+.container2 {
+    max-width: 400px;
+    margin: 0 auto;
   }
