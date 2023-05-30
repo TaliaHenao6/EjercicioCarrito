@@ -28,12 +28,12 @@ function App() {
             <ul className="nav">
               <li>
                 <Link to="/">
-                  <Home />
+                  <Home  />
                 </Link>
               </li>
               <li>
                 <Link to="/Carrito">
-                  <NavCarrito/>
+                  <NavCarrito />
                 </Link>
               </li>
               <li>

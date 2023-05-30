@@ -94,18 +94,17 @@ const Producto = ({ infoProducto }) => {
             color="secondary"
             startIcon={<AddShoppingCartIcon />}
             onClick={() => addToCar(infoProducto)}
-          >
-            Add to card
+          >Añadir al carrito
           </Button>
 
-          <Button
+          {/* <Button
             variant="contained"
             color="error"
             startIcon={<Delete />}
             onClick={() => removeFromCar(infoProducto.id)}
           >
             eliminar
-          </Button>
+          </Button> */}
           <Favorite infoProducto={infoProducto.nombre} />
         </CardActions>
       </Card>

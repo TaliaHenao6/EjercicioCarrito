@@ -15,6 +15,10 @@ const ProductoCarrito = ({data}) => {
     const cantidad = data.cantidad;
 
     console.log(data);
+
+     const formatPrice = (totalPrice) => {
+       return totalPrice.toLocaleString("es-CO");
+     };
   return (
     <>
       <div className="item-carrito">
@@ -26,7 +30,7 @@ const ProductoCarrito = ({data}) => {
           </div>
           <div className="item-text">
             <h4>{data.infoProducto.nombre}</h4>
-            <p className="">{data.infoProducto.precio}</p>
+            <p className="">$ {formatPrice(data.infoProducto.precio)}</p>
             <span className="">{cantidad}</span>
           </div>
           <div className="item-actions">
