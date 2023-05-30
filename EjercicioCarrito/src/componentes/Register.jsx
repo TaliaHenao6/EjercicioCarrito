@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import './styles.css';
 
-const Login2 = () => {
+const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    direccion: '',
     email: '',
     password: ''
   });
   const [errors, setErrors] = useState({
     name: '',
     phone: '',
+    direccion: '',
     email: '',
     password: ''
   });
@@ -24,10 +26,11 @@ const Login2 = () => {
     e.preventDefault();
     const newErrors = validateForm(formData);
     if (Object.keys(newErrors).length === 0) {
-      setSuccessMessage('Formulario enviado con éxito');
+      setSuccessMessage('Usuario creado con éxito');
       setFormData({
         name: '',
         phone: '',
+        direccion: '',
         email: '',
         password: ''
       });
@@ -48,6 +51,10 @@ const Login2 = () => {
     }
     if (!data.phone) {
         errors.phone = 'Por favor, ingresa tu teléfono';
+      }
+
+    if (!data.direccion) {
+        errors.direccion = 'Por favor, ingresa tu teléfono';
       }
 
     if (!data.email) {
@@ -71,7 +78,7 @@ const Login2 = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Nombre:</label>
-          <input
+          <input className='input'
             type="text"
             id="name"
             name="name"
@@ -83,7 +90,7 @@ const Login2 = () => {
         </div>
         <div className="form-group">
           <label htmlFor="phone">Phone:</label>
-          <input
+          <input className='input'
             type="number"
             id="phone"
             name="phone"
@@ -94,30 +101,42 @@ const Login2 = () => {
           {errors.phone && <p className="error-message">{errors.phone}</p>}
         </div>
         <div className="form-group">
+          <label htmlFor="name">Dirección:</label>
+          <input className='input'
+            type="text"
+            id="direccion"
+            name="direccion"
+            value={formData.direccion}
+            onChange={handleInputChange}
+            placeholder='Escribe tu dirección'
+          />
+          {errors.name && <p className="error-message">{errors.name}</p>}
+        </div>
+        <div className="form-group">
           <label htmlFor="email">Correo Electrónico:</label>
-          <input
+          <input className='input'
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder='Escribe tu email'
+            placeholder='Escribe tu correo electrónico'
           />
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="password">Contraseña:</label>
-          <input
+          <input className='input'
             type="password"
             id="password"
             name="password"
             value={formData.password}
             onChange={handleInputChange}
-            placeholder='Escribe tu password'
+            placeholder='Escribe tu contraseña'
           />
           {errors.password && <p className="error-message">{errors.password}</p>}
         </div>
-        <button type="submit">Registrarme</button>
+        <button className='button' type="submit">Registrarme</button>
       </form>
       {successMessage && <p className="success-message">{successMessage}</p>}
     </div>
@@ -126,4 +145,4 @@ const Login2 = () => {
 
 
 
-export default Login2;
+export default Register;

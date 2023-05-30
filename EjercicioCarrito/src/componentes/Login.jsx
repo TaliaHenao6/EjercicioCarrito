@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     const newErrors = validateForm(formData);
     if (Object.keys(newErrors).length === 0) {
-      setSuccessMessage('Formulario enviado con éxito');
+      setSuccessMessage('Sesión iniciada con éxito');
       setFormData({
         email: '',
         password: ''
@@ -61,36 +61,36 @@ const Login = () => {
        
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico:</label><br />
-          <input
+          <input className='input'
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder='Escribe tu email'
+            placeholder='Escribe tu correo electrónico'
           />
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="password">Contraseña:</label><br />
-          <input
+          <input className='input'
             type="password"
             id="password"
             name="password"
             value={formData.password}
             onChange={handleInputChange}
-            placeholder='Escribe tu password'
+            placeholder='Escribe tu contraseña'
           />
           {errors.password && <p className="error-message">{errors.password}</p>}
         </div>
-        <button type="submit">Iniciar Sesión</button>
+        <button className='button' type="submit">Iniciar Sesión</button>
         
       </form>
       
       {successMessage && <p className="success-message">{successMessage}</p>}
 
-      <p className="">¿No tienes usuario para iniciar sesión?</p>
-      <button type="submit">Registrarme ahora</button>
+      <p className="nous">¿No tienes usuario para iniciar sesión?</p>
+      <a className='' href='/Register'>Registrarme ahora</a>
     </div>
 
     

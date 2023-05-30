@@ -206,7 +206,7 @@ align-items: center;
 
 /* Forms */
 .container {
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
   }
 
@@ -220,16 +220,21 @@ align-items: center;
   }
   
 .input {
-    width: 100%;
+    width: 50%;
     padding: 8px;
-    border: 1px solid #7B1FA2;
-    border-radius: 4px;
+    border: 2px solid #7B1FA2;
+    border-radius: 10px;
+    
   }
 
 .button{
     background-color: #7B1FA2;
   }
   
+.nous{
+    padding:  10px;
+    
+  }
 .error-message {
     color: red;
   }

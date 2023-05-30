@@ -12,6 +12,7 @@ import ListaProductos from "./productos.json";
 
 // Importamos el useContext
 import CarritoProvider from "./context/CarritoContext";
+import Register from "./componentes/Register";
 
 function App() {
   
@@ -60,6 +61,7 @@ function App() {
               element={<Carrito/>}
             />
             <Route exact path="/Login" element={<Login />} />
+            <Route exact path="/Register" element={<Register />} />
           </Routes>
         </Router>
       </CarritoProvider>
