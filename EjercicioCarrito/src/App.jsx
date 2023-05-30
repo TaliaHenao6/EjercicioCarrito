@@ -13,60 +13,57 @@ import ListaProductos from "./productos.json";
 
 // Importamos el useContext
 import CarritoProvider from "./context/CarritoContext";
-import WishlistProvider from "./context/WishlistContext";
 
 function App() {
   return (
     <>
-      <WishlistProvider>
-        <CarritoProvider>
-          <Router>
-            <div className="header">
-              <div className="Logo">
-                {/* <Link to={"/"}> */}
-                <a href={"/"}>
-                  <img src="./src/assets/electrotop.png" alt="BackPackers" />
-                </a>
-                {/* </Link> */}
-              </div>
-              <ul className="nav">
-                <li>
-                  <Link to="/">
-                    <Home />
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/Carrito">
-                    <NavCarrito />
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/Fav">
-                    <Favorite />
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/Login">
-                    <Person2Outlined />
-                  </Link>
-                </li>
-              </ul>
+      <CarritoProvider>
+        <Router>
+          <div className="header">
+            <div className="Logo">
+              {/* <Link to={"/"}> */}
+              <a href={"/"}>
+                <img src="./src/assets/electrotop.png" alt="BackPackers" />
+              </a>
+              {/* </Link> */}
             </div>
-            <Routes>
-              <Route
-                exact
-                path="/"
-                element={<Productos ListaProductos={ListaProductos} />}
-              />
-              <Route exact path="/Carrito" element={<Carrito />} />
+            <ul className="nav">
+              <li>
+                <Link to="/">
+                  <Home />
+                </Link>
+              </li>
+              <li>
+                <Link to="/Carrito">
+                  <NavCarrito />
+                </Link>
+              </li>
 
-              <Route exact path="/Login" element={<Login />} />
-            </Routes>
-          </Router>
-        </CarritoProvider>
-      </WishlistProvider>
+              <li>
+                <Link to="/Favoritos">
+                  <Favorite />
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/Login">
+                  <Person2Outlined />
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={<Productos ListaProductos={ListaProductos} />}
+            />
+            <Route exact path="/Carrito" element={<Carrito />} />
+            <Route exact path="/Favoritos" element={<Wishlist />} />
+            <Route exact path="/Login" element={<Login />} />
+          </Routes>
+        </Router>
+      </CarritoProvider>
     </>
   );
 }

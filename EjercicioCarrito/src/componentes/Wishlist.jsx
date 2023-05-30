@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import { WishlistContext } from "../context/WishlistContext";
 import ProductoCarrito from "./ProductoCarrito";
 
 import "./styles.css";
 
 const Wishlist = () => {
-  const [wishlist, setWishlist] = useContext(WishlistContext);
-  const cantidad = wishlist.length;
+  //   const [wishlist, setWishlist] = useContext(WishlistContext);
+  //   const cantidad = wishlist.length;
 
   const removeFromWishlist = (index) => {
     setWishlist((prevWishlist) => prevWishlist.filter((_, i) => i !== index));
@@ -15,8 +14,8 @@ const Wishlist = () => {
   return (
     <>
       <div className="wishlist-container">
-        <div>Items en la Wishlist: {cantidad}</div>
-        {wishlist.length > 0 ? (
+        <div>Items en la Wishlist: hii </div>
+        {/* {wishlist.length > 0 ? (
           wishlist.map((producto, index) => (
             <ProductoCarrito
               key={index}
@@ -26,7 +25,7 @@ const Wishlist = () => {
           ))
         ) : (
           <p>No has agregado productos a la Wishlist aún.</p>
-        )}
+        )} */}
       </div>
     </>
   );
