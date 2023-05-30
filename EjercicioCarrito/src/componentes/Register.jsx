@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import './styles.css';
+import React, { useState } from "react";
+import "./styles.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    direccion: '',
-    email: '',
-    password: ''
+    name: "",
+    phone: "",
+    direccion: "",
+    email: "",
+    password: "",
   });
   const [errors, setErrors] = useState({
-    name: '',
-    phone: '',
-    direccion: '',
-    email: '',
-    password: ''
+    name: "",
+    phone: "",
+    direccion: "",
+    email: "",
+    password: "",
   });
-  const [successMessage, setSuccessMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,16 +26,16 @@ const Register = () => {
     e.preventDefault();
     const newErrors = validateForm(formData);
     if (Object.keys(newErrors).length === 0) {
-      setSuccessMessage('Usuario creado con éxito');
+      setSuccessMessage("Usuario creado con éxito");
       setFormData({
-        name: '',
-        phone: '',
-        direccion: '',
-        email: '',
-        password: ''
+        name: "",
+        phone: "",
+        direccion: "",
+        email: "",
+        password: "",
       });
       setTimeout(() => {
-        setSuccessMessage('');
+        setSuccessMessage("");
       }, 3000);
     } else {
       setErrors(newErrors);
@@ -47,26 +47,26 @@ const Register = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!data.name) {
-      errors.name = 'Por favor, ingresa tu nombre';
+      errors.name = "Por favor, ingresa tu nombre";
     }
     if (!data.phone) {
-        errors.phone = 'Por favor, ingresa tu teléfono';
-      }
+      errors.phone = "Por favor, ingresa tu teléfono";
+    }
 
     if (!data.direccion) {
-        errors.direccion = 'Por favor, ingresa tu dirección';
-      }
+      errors.direccion = "Por favor, ingresa tu dirección";
+    }
 
     if (!data.email) {
-      errors.email = 'Por favor, ingresa tu correo electrónico';
+      errors.email = "Por favor, ingresa tu correo electrónico";
     } else if (!emailRegex.test(data.email)) {
-      errors.email = 'Por favor, ingresa un correo electrónico válido';
+      errors.email = "Por favor, ingresa un correo electrónico válido";
     }
 
     if (!data.password) {
-      errors.password = 'Por favor, ingresa tu contraseña';
+      errors.password = "Por favor, ingresa tu contraseña";
     } else if (data.password.length < 6) {
-      errors.password = 'La contraseña debe tener al menos 6 caracteres';
+      errors.password = "La contraseña debe tener al menos 6 caracteres";
     }
 
     return errors;
@@ -74,75 +74,82 @@ const Register = () => {
 
   return (
     <div className="container2">
-    <h1>Crea una cuenta</h1>
+      <h1>Crea una cuenta</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Nombre:</label>
-          <input className='input'
+          <input
+            className="input"
             type="text"
             id="name"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            placeholder='Escribe tu nombre'
+            placeholder="Escribe tu nombre"
           />
           {errors.name && <p className="error-message">{errors.name}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="phone">Phone:</label>
-          <input className='input'
+          <input
+            className="input"
             type="number"
             id="phone"
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
-            placeholder='Escribe tu teléfono'
+            placeholder="Escribe tu teléfono"
           />
           {errors.phone && <p className="error-message">{errors.phone}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="name">Dirección:</label>
-          <input className='input'
+          <input
+            className="input"
             type="text"
             id="direccion"
             name="direccion"
             value={formData.direccion}
             onChange={handleInputChange}
-            placeholder='Escribe tu dirección'
+            placeholder="Escribe tu dirección"
           />
           {errors.name && <p className="error-message">{errors.direccion}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico:</label>
-          <input className='input'
+          <input
+            className="input"
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleInputChange}
-            placeholder='Escribe tu correo electrónico'
+            placeholder="Escribe tu correo electrónico"
           />
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="password">Contraseña:</label>
-          <input className='input'
+          <input
+            className="input"
             type="password"
             id="password"
             name="password"
             value={formData.password}
             onChange={handleInputChange}
-            placeholder='Escribe tu contraseña'
+            placeholder="Escribe tu contraseña"
           />
-          {errors.password && <p className="error-message">{errors.password}</p>}
+          {errors.password && (
+            <p className="error-message">{errors.password}</p>
+          )}
         </div>
-        <button className='button' type="submit">Registrarme</button>
+        <button className="button" type="submit">
+          Registrarme
+        </button>
       </form>
       {successMessage && <p className="success-message">{successMessage}</p>}
     </div>
   );
 };
-
-
 
 export default Register;

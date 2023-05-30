@@ -1,4 +1,3 @@
-
 import ProductoCarrito from "./ProductoCarrito";
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
@@ -15,16 +14,20 @@ const Carrito = () => {
     0
   );
 
-  const formatPrice = (totalPrice) =>{
+  const formatPrice = (totalPrice) => {
     return totalPrice.toLocaleString("es-CO");
-  }
+  };
 
-  const cleanCart = ()=>{
-        if(confirm(`Tienes ${cantidad} productos en el carrito, ¿SEGURO QUE LOS QUIERES ELIMINAR?`)){
-            setCarrito([]); 
-            window.location.href = "/";
-        }
-  }
+  const cleanCart = () => {
+    if (
+      confirm(
+        `Tienes ${cantidad} productos en el carrito, ¿SEGURO QUE LOS QUIERES ELIMINAR?`
+      )
+    ) {
+      setCarrito([]);
+      window.location.href = "/";
+    }
+  };
 
   return (
     <>
