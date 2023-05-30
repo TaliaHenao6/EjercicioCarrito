@@ -185,3 +185,66 @@ align-items: center;
     font-size: 16px;
     transition: all .3s ease;
 }
+
+.vaciar-carrito {
+	border: none;
+	background-color: #000;
+	color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: auto;
+
+}
+
+.pagar {
+	border: none;
+	background-color: #000;
+	color: #fff;
+    padding: 10px;
+
+}
+
+/* Forms */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+.form-group {
+    
+    margin-bottom: 20px;
+  }
+  
+.label {
+    display: block;
+    font-weight: bold;
+  }
+  
+.input {
+    width: 50%;
+    padding: 8px;
+    border: 2px solid #7B1FA2;
+    border-radius: 10px;
+    
+  }
+
+.button{
+    background-color: #7B1FA2;
+  }
+  
+.nous{
+    padding:  10px;
+    
+  }
+.error-message {
+    color: red;
+  }
+  
+.success-message {
+    color: green;
+  }
+
+.container2 {
+    max-width: 400px;
+    margin: 0 auto;
+  }

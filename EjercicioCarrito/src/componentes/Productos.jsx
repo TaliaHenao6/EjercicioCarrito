@@ -13,4 +13,4 @@ const Productos = ({ListaProductos, addToCar, removeToCar}) =>{
         </>
       )
 }
-export default Productos;
+export default Productos; 

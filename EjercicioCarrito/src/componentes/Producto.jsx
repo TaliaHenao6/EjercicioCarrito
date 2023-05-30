@@ -92,7 +92,7 @@ const Producto = ({ infoProducto }) => {
         >
           eliminar
         </Button> */}
-        <Favorite infoProducto={infoProducto.nombre} />
+        <Favorite infoProducto={infoProducto} />
       </CardActions>
     </Card>
   );
