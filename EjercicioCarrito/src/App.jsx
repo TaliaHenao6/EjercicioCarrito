@@ -22,18 +22,18 @@ function App() {
           <div className="header">
             <div className="Logo">
               <Link to={"/"}>
-              <a href=""><img src="./src/assets/electrotop.png" alt="Electrotop" /></a>
+              <a href=""><img src="./src/assets/electrotop.png" alt="BackPackers" /></a>
               </Link>
             </div>
             <ul className="nav">
               <li>
                 <Link to="/">
-                  <Home />
+                  <Home  />
                 </Link>
               </li>
               <li>
                 <Link to="/Carrito">
-                  <NavCarrito/>
+                  <NavCarrito />
                 </Link>
               </li>
               <li>

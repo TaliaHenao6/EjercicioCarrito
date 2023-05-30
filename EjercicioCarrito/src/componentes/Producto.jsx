@@ -74,6 +74,10 @@ const Producto = ({ infoProducto }) => {
 
   const cantidadXProducto = getCantidadById(idProducto);
 
+  const formatPrice =(totalPrice)=>{
+    return totalPrice.toLocaleString("es-CO");
+  }
+
   return (
     <>
       <Card sx={{ maxWidth: 345 }} className="item">
@@ -85,7 +89,7 @@ const Producto = ({ infoProducto }) => {
         </CardMedia>
         <CardContent>
           <h3 className="name">{infoProducto.nombre}</h3>
-          <p className="price">{infoProducto.precio}</p>
+          <p className="price">{formatPrice(infoProducto.precio)}</p>
           <p className="description">{infoProducto.descripcion}</p>
         </CardContent>
         <CardActions>
@@ -94,18 +98,17 @@ const Producto = ({ infoProducto }) => {
             color="secondary"
             startIcon={<AddShoppingCartIcon />}
             onClick={() => addToCar(infoProducto)}
-          >
-            Add to cart
+          >Añadir al carrito
           </Button>
 
-          <Button
+          {/* <Button
             variant="contained"
             color="error"
             startIcon={<Delete />}
             onClick={() => removeFromCar(infoProducto.id)}
           >
             eliminar
-          </Button>
+          </Button> */}
           <Favorite infoProducto={infoProducto.nombre} />
         </CardActions>
       </Card>

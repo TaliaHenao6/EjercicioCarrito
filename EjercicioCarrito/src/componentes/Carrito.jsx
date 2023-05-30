@@ -15,6 +15,10 @@ const Carrito = () => {
     0
   );
 
+  const formatPrice = (totalPrice) =>{
+    return totalPrice.toLocaleString("es-CO");
+  }
+
   const cleanCart = ()=>{
         if(confirm(`Tienes ${cantidad} productos en el carrito, ¿SEGURO QUE LOS QUIERES ELIMINAR?`)){
             setCarrito([]); 
@@ -34,7 +38,7 @@ const Carrito = () => {
           <p>No Has agregado productos al carrito aún!.</p>
         )}
         <div className="precio-total">
-          <span>Total</span>${totalPrice}
+          <span>Total</span>$ {formatPrice(totalPrice)}
         </div>
         <button className="vaciar-carrito" onClick={() => cleanCart()}>Vaciar Carrito</button>
         <button className="pagar">Pagar</button>
