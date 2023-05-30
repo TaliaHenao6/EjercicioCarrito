@@ -74,9 +74,9 @@ const Producto = ({ infoProducto }) => {
 
   const cantidadXProducto = getCantidadById(idProducto);
 
-  const formatPrice =(totalPrice)=>{
+  const formatPrice = (totalPrice) => {
     return totalPrice.toLocaleString("es-CO");
-  }
+  };
 
   return (
     <>
@@ -98,7 +98,8 @@ const Producto = ({ infoProducto }) => {
             color="secondary"
             startIcon={<AddShoppingCartIcon />}
             onClick={() => addToCar(infoProducto)}
-          >Añadir al carrito
+          >
+            Añadir al carrito
           </Button>
 
           {/* <Button
