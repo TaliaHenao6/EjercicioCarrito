@@ -74,6 +74,10 @@ const Producto = ({ infoProducto }) => {
 
   const cantidadXProducto = getCantidadById(idProducto);
 
+  const formatPrice =(totalPrice)=>{
+    return totalPrice.toLocaleString("es-CO");
+  }
+
   return (
     <>
       <Card sx={{ maxWidth: 345 }} className="item">
@@ -85,7 +89,7 @@ const Producto = ({ infoProducto }) => {
         </CardMedia>
         <CardContent>
           <h3 className="name">{infoProducto.nombre}</h3>
-          <p className="price">{infoProducto.precio}</p>
+          <p className="price">{formatPrice(infoProducto.precio)}</p>
           <p className="description">{infoProducto.descripcion}</p>
         </CardContent>
         <CardActions>
