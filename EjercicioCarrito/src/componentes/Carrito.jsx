@@ -40,8 +40,13 @@ const Carrito = () => {
         <div className="precio-total">
           <span>Total</span>$ {formatPrice(totalPrice)}
         </div>
+<<<<<<< HEAD
         <button className="vaciar-carrito" onClick={() => cleanCart()}>Vaciar Carrito</button>
         <button className="pagar">Pagar</button>
+=======
+        <button onClick={() => cleanCart()}>Limpiar carrito</button>
+        <button>Pagar</button>
+>>>>>>> 8bf4c0f12be2bab0f940a2a90ab37e9d23db9633
       </div>
     </>
   );
