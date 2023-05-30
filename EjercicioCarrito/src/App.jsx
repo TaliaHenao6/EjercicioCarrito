@@ -59,7 +59,7 @@ function App() {
               element={<Productos ListaProductos={ListaProductos} />}
             />
             <Route exact path="/Carrito" element={<Carrito />} />
-            <Route exact path="/Favoritos" element={<Wishlist />} />
+            <Route exact path="/Favoritos" element={<Favorite />} />
             <Route exact path="/Login" element={<Login />} />
           </Routes>
         </Router>

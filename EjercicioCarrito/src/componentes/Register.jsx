@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-
 import './styles.css';
 
-const Login = () => {
+const Register = () => {
   const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    direccion: '',
     email: '',
     password: ''
   });
   const [errors, setErrors] = useState({
+    name: '',
+    phone: '',
+    direccion: '',
     email: '',
     password: ''
   });
@@ -21,8 +26,11 @@ const Login = () => {
     e.preventDefault();
     const newErrors = validateForm(formData);
     if (Object.keys(newErrors).length === 0) {
-      setSuccessMessage('Sesión iniciada con éxito');
+      setSuccessMessage('Usuario creado con éxito');
       setFormData({
+        name: '',
+        phone: '',
+        direccion: '',
         email: '',
         password: ''
       });
@@ -38,6 +46,16 @@ const Login = () => {
     const errors = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    if (!data.name) {
+      errors.name = 'Por favor, ingresa tu nombre';
+    }
+    if (!data.phone) {
+        errors.phone = 'Por favor, ingresa tu teléfono';
+      }
+
+    if (!data.direccion) {
+        errors.direccion = 'Por favor, ingresa tu dirección';
+      }
 
     if (!data.email) {
       errors.email = 'Por favor, ingresa tu correo electrónico';
@@ -55,12 +73,47 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-    <h1>Iniciar Sesión</h1>
+    <div className="container2">
+    <h1>Crea una cuenta</h1>
       <form onSubmit={handleSubmit}>
-       
         <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label><br />
+          <label htmlFor="name">Nombre:</label>
+          <input className='input'
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            placeholder='Escribe tu nombre'
+          />
+          {errors.name && <p className="error-message">{errors.name}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone">Phone:</label>
+          <input className='input'
+            type="number"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+            placeholder='Escribe tu teléfono'
+          />
+          {errors.phone && <p className="error-message">{errors.phone}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="name">Dirección:</label>
+          <input className='input'
+            type="text"
+            id="direccion"
+            name="direccion"
+            value={formData.direccion}
+            onChange={handleInputChange}
+            placeholder='Escribe tu dirección'
+          />
+          {errors.name && <p className="error-message">{errors.direccion}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Correo Electrónico:</label>
           <input className='input'
             type="email"
             id="email"
@@ -72,7 +125,7 @@ const Login = () => {
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="password">Contraseña:</label><br />
+          <label htmlFor="password">Contraseña:</label>
           <input className='input'
             type="password"
             id="password"
@@ -83,19 +136,13 @@ const Login = () => {
           />
           {errors.password && <p className="error-message">{errors.password}</p>}
         </div>
-        <button className='button' type="submit">Iniciar Sesión</button>
-        
+        <button className='button' type="submit">Registrarme</button>
       </form>
-      
       {successMessage && <p className="success-message">{successMessage}</p>}
-
-      <p className="nous">¿No tienes usuario para iniciar sesión?</p>
-      <a className='' href='/Register'>Registrarme ahora</a>
     </div>
-
-    
   );
 };
 
 
-export default Login;
+
+export default Register;
