@@ -21,10 +21,10 @@ function App() {
       <CarritoProvider>
         <Router>
           <div className="header">
-            <div className="Logo">
+            <div className="logo">
               {/* <Link to={"/"}> */}
               <a href={"/"}>
-                <img src="./src/assets/electrotop.png" alt="BackPackers" />
+                <img src="./src/assets/electrotop.png" alt="BackPackers" className="logo-image" />
               </a>
               {/* </Link> */}
             </div>
