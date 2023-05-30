@@ -5,7 +5,7 @@ const Productos = ({ListaProductos, addToCar, removeToCar}) =>{
       return (
         <>
         <h1>Lista de Productos</h1>
-        <p>Cantidad de productos: { ListaProductos.length}</p>
+        <p>Catidad de productos: { ListaProductos.length}</p>
         <div className="items-list">
           {ListaProductos.map(producto =>
             <Producto key={producto.id} infoProducto={producto} addToCar={addToCar} removeToCar={removeToCar}/>)}
