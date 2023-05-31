@@ -70,15 +70,14 @@ const Carrito = () => {
               <h3 className="left">${formatPrice(totalPrice)}</h3>
             </li>
           </ul>
-          {/* <div className="precio-total">
-           
-          </div> */}
-          <Button variant="contained" color="success">
-            Procesar compra
-          </Button>
-          <Button variant="outlined" onClick={() => cleanCart()}>
-            Limpiar carrito
-          </Button>
+          <div className="resumen-actions">
+            <Button variant="contained" color="success">
+              Procesar compra
+            </Button>
+            <Button variant="outlined" size="small" onClick={() => cleanCart()}>
+              Limpiar carrito
+            </Button>
+          </div>
         </div>
       </div>
     </section>

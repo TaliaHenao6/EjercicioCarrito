@@ -110,7 +110,7 @@ body{
 /* Productos */
 .items-list{
     margin: auto auto;
-    width: 95%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
@@ -186,7 +186,7 @@ body{
 .item-carrito{
     width: 100%;
     display: flex;
-    margin: 10px 0;
+    margin: 5px 0;
     border: 1px solid rgba(0, 0, 0, 0.178);
     padding: 8px;
     border-radius: 6px;
@@ -258,9 +258,7 @@ body{
   background-color: #cfcfcf;
   cursor: pointer;
   border-radius: 6px;
-  
 }
-
 
  .text-cantidad{
     text-transform: capitalize;
@@ -274,11 +272,12 @@ body{
 }
 
 .resumen-container{
+    min-width: 350px;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgba(0, 0, 0, 0.377);
     border-radius: 4px;
     padding: 0 10px;
-    max-height: 280px ;
+    height: 100%;
 }
 
 .titulo-resumen {
@@ -314,11 +313,25 @@ body{
 
 }
 
+
 .resumen-total h3{
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
+
+.resumen-actions{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+
+}
+
+
 
 .liked{
     cursor: pointer;
