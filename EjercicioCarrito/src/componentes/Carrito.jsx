@@ -2,7 +2,10 @@ import ProductoCarrito from "./ProductoCarrito";
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 
+import {Button} from "@mui/material";
+
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 const Carrito = () => {
   const [carrito, setCarrito] = useContext(CarritoContext);
@@ -30,24 +33,59 @@ const Carrito = () => {
   };
 
   return (
-    <>
-      <div className="cart-container">
-        <div>item en Carrito: {cantidad} </div>
-        {carrito.length > 0 ? (
-          carrito.map((producto, idx) => (
-            <ProductoCarrito key={producto.idx} data={producto} />
-          ))
-        ) : (
-          <p>No Has agregado productos al carrito aún!.</p>
-        )}
-        <div className="precio-total">
-          <span>Total</span>$ {formatPrice(totalPrice)}
+    <section className="main-container">
+      <h1>Mi Carrito</h1>
+      <div className="detalle-carrito">
+        <div className="cart-productos">
+          {carrito.length > 0 ? (
+            carrito.map((producto, idx) => (
+              <ProductoCarrito key={producto.idx} data={producto} />
+            ))
+          ) : (
+            <>
+              <h2>No Has agregado productos al carrito aún!.</h2>
+              <Link to="/">
+                <Button variant="contained" color="secondary">
+                  Comprar
+                </Button>
+              </Link>
+            </>
+          )}
         </div>
-        <button onClick={() => cleanCart()}>Limpiar carrito</button>
-        <button>Pagar</button>
+        {/* Posible componente */}
+        <div className="resumen-container">
+          <h3 className="titulo-resumen">Resumen de tu pedido</h3>
+          <ul className="resumen">
+            <li>
+              <p>Items </p>
+              <p className="left">{cantidad}</p>
+            </li>
+            <li>
+              <p>subtotal </p>
+              <p className="left">$0</p>
+            </li>
+            {/* <li><p>envio</p></li> */}
+            <li className="resumen-total">
+              <h3>total</h3>{" "}
+              <h3 className="left">${formatPrice(totalPrice)}</h3>
+            </li>
+          </ul>
+          <div className="resumen-actions">
+            <Button variant="contained" color="success">
+              Procesar compra
+            </Button>
+            <Button variant="outlined" size="small" onClick={() => cleanCart()}>
+              Limpiar carrito
+            </Button>
+          </div>
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 
 export default Carrito;
+
+
+
+

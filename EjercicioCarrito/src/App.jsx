@@ -63,6 +63,7 @@ function App() {
             <Route exact path="/Favoritos" element={<Favorite />} />
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
+            <Route exact path="/Carrito" element={<PayPalButton />} />
           </Routes>
         </Router>
       </CarritoProvider>
