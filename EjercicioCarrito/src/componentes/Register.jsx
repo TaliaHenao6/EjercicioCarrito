@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Button} from "@mui/material"
 import "./styles.css";
 
 const Register = () => {
@@ -74,11 +75,11 @@ const Register = () => {
 
   return (
     <section className="main-container">
-    <div className="container2">
+    <div className="container">
       <h1>Crea una cuenta</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
-          <label htmlFor="name">Nombre:</label><br />
+          <label htmlFor="name">Nombre:</label>
           <input
             className="input"
             type="text"
@@ -91,33 +92,7 @@ const Register = () => {
           {errors.name && <p className="error-message">{errors.name}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="phone">Phone:</label><br />
-          <input
-            className="input"
-            type="number"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleInputChange}
-            placeholder="Escribe tu teléfono"
-            />
-          {errors.phone && <p className="error-message">{errors.phone}</p>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="name">Dirección:</label><br />
-          <input
-            className="input"
-            type="text"
-            id="direccion"
-            name="direccion"
-            value={formData.direccion}
-            onChange={handleInputChange}
-            placeholder="Escribe tu dirección"
-            />
-          {errors.name && <p className="error-message">{errors.direccion}</p>}
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label><br />
+          <label htmlFor="email">Correo Electrónico:</label>
           <input
             className="input"
             type="email"
@@ -130,7 +105,33 @@ const Register = () => {
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="password">Contraseña:</label><br />
+          <label htmlFor="phone">Telefono:</label>
+          <input
+            className="input"
+            type="number"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+            placeholder="Escribe tu teléfono"
+            />
+          {errors.phone && <p className="error-message">{errors.phone}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="name">Dirección:</label>
+          <input
+            className="input"
+            type="text"
+            id="direccion"
+            name="direccion"
+            value={formData.direccion}
+            onChange={handleInputChange}
+            placeholder="Escribe tu dirección"
+            />
+          {errors.name && <p className="error-message">{errors.direccion}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Contraseña:</label>
           <input
             className="input"
             type="password"
@@ -144,13 +145,18 @@ const Register = () => {
             <p className="error-message">{errors.password}</p>
             )}
         </div>
-        <button className="button" type="submit">
-          Registrarme
-        </button>
+        <div className="form-group">
+          <Button variant="contained" size="small" color="secondary" type="submit">
+            Registrarme
+          </Button>
+        </div>
       </form>
       {successMessage && <p className="success-message">{successMessage}</p>}
-      <p className="nous">¿Ya tienes un usuario, quieres iniciar sesión?</p>
-      <a className='login' type="submit" href='/Login'>Iniciar Sesión</a>
+      <div className="form-info">
+        <p className="nous">¿Ya tienes un usuario, quieres iniciar sesión?</p>
+        <a className='btn' type="submit" href='/Login'>Iniciar Sesión</a>
+
+      </div>
     </div>
     </section>
   );

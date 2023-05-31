@@ -131,7 +131,7 @@ const Login = () => {
         </form>
         {successMessage && <p className="success-message">{successMessage}</p>}
 
-        <div className="info-login">
+        <div className="form-info">
         <p className="nous">¿No tienes usuario para iniciar sesión?</p>
         <a className="btn" href="/Register">
           Registrarme ahora
