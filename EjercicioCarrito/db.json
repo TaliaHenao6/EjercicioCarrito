@@ -1,0 +1,41 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "name": "David",
+      "phone": "323 852 3619",
+      "address": "Medellín",
+      "email": "david@correo.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "name": "Thalia Henao",
+      "phone": "323 852 3619",
+      "address": "Medellín",
+      "email": "thalia@correo.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "name": "Nicolas",
+      "phone": "323 852 3619",
+      "address": "Medellín",
+      "email": "nicolas@correo.com",
+      "password": "123456",
+      "role": "user"
+    },
+
+    {
+      "id": 3,
+      "name": "Admin",
+      "phone": "000 000 0000",
+      "address": "Colombia",
+      "email": "admin@correo.com",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ]
+}

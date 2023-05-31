@@ -1,13 +1,14 @@
 import { Route, Link, Routes, BrowserRouter as Router } from "react-router-dom";
-import "./App.css";
+// import "./App.css";
 import Productos from "./componentes/Productos";
 import Carrito from "./componentes/Carrito";
 import Login from "./componentes/Login";
 import NavCarrito from "./componentes/NavCarrito";
 import Register from "./componentes/Register";
+import Perfil from "./componentes/Perfil";
 import Wishlist from "./componentes/Wishlist";
 
-import { Favorite, Home, Person2Outlined } from "@mui/icons-material";
+import { Favorite, Home, Person2Outlined, Logout, AccountCircle} from "@mui/icons-material";
 
 import "./componentes/styles.css";
 import ListaProductos from "./productos.json";
@@ -16,6 +17,16 @@ import ListaProductos from "./productos.json";
 import CarritoProvider from "./context/CarritoContext";
 
 function App() {
+  const login = localStorage.getItem("login");
+
+  const logout = ()=>{
+    alert("Vas cerrar la sesion")
+    localStorage.removeItem("login");
+    window.location.href = "/";
+  }
+
+
+
   return (
     <>
       <CarritoProvider>
@@ -24,7 +35,11 @@ function App() {
             <div className="logo">
               {/* <Link to={"/"}> */}
               <a href={"/"}>
-                <img src="./src/assets/electrotop.png" alt="BackPackers" className="logo-image" />
+                <img
+                  src="./src/assets/electrotop.png"
+                  alt="BackPackers"
+                  className="logo-image"
+                />
               </a>
               {/* </Link> */}
             </div>
@@ -35,7 +50,7 @@ function App() {
                 </Link>
               </li>
               <li>
-                <Link to="/Carrito">
+                <Link to="/Carrito" className="link">
                   <NavCarrito />
                 </Link>
               </li>
@@ -47,9 +62,22 @@ function App() {
               </li>
 
               <li>
-                <Link to="/Login">
-                  <Person2Outlined />
-                </Link>
+                {login === "true" ? (
+                  <Link to="/Perfil">
+                    <AccountCircle />
+                  </Link>
+                ) : (
+                  <Link to="/Login">
+                    <Person2Outlined />
+                  </Link>
+                )}
+              </li>
+              <li>
+                {login === "true" ? (
+                  <a><Logout onClick={() => logout()} /></a>
+                ) : (
+                  <span></span>
+                )}
               </li>
             </ul>
           </div>
@@ -63,7 +91,7 @@ function App() {
             <Route exact path="/Favoritos" element={<Favorite />} />
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
-            <Route exact path="/Carrito" element={<PayPalButton />} />
+            <Route exact path="/Perfil" element={<Perfil />} />
           </Routes>
         </Router>
       </CarritoProvider>
