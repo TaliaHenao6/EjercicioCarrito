@@ -77,7 +77,7 @@ const Register = () => {
       <h1>Crea una cuenta</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Nombre:</label>
+          <label htmlFor="name">Nombre:</label><br />
           <input
             className="input"
             type="text"
@@ -90,7 +90,7 @@ const Register = () => {
           {errors.name && <p className="error-message">{errors.name}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="phone">Phone:</label>
+          <label htmlFor="phone">Phone:</label><br />
           <input
             className="input"
             type="number"
@@ -103,7 +103,7 @@ const Register = () => {
           {errors.phone && <p className="error-message">{errors.phone}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="name">Dirección:</label>
+          <label htmlFor="name">Dirección:</label><br />
           <input
             className="input"
             type="text"
@@ -116,7 +116,7 @@ const Register = () => {
           {errors.name && <p className="error-message">{errors.direccion}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="email">Correo Electrónico:</label>
+          <label htmlFor="email">Correo Electrónico:</label><br />
           <input
             className="input"
             type="email"
@@ -129,7 +129,7 @@ const Register = () => {
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="password">Contraseña:</label>
+          <label htmlFor="password">Contraseña:</label><br />
           <input
             className="input"
             type="password"
@@ -148,6 +148,9 @@ const Register = () => {
         </button>
       </form>
       {successMessage && <p className="success-message">{successMessage}</p>}
+      <p className="nous">¿Ya tienes un usuario, quieres iniciar sesión?</p>
+      <a className='login' type="submit" href='/Login'>Iniciar Sesión</a>
+   
     </div>
   );
 };
