@@ -11,6 +11,8 @@ import { CarritoContext } from "../context/CarritoContext";
 import Favorite from "./Heart";
 
 const Producto = ({ infoProducto }) => {
+
+  const login = localStorage.getItem("login");
   const [carrito, setCarrito] = useContext(CarritoContext);
   const idProducto = infoProducto.id;
 
@@ -75,7 +77,9 @@ const Producto = ({ infoProducto }) => {
         <p className="price">{formatPrice(infoProducto.precio)}</p>
         <p className="description">{infoProducto.descripcion}</p>
       </CardContent>
-      <CardActions>
+      { login === "true" ?
+
+        <CardActions>
         <Button
           variant="contained"
           color="secondary"
@@ -89,11 +93,16 @@ const Producto = ({ infoProducto }) => {
           color="error"
           startIcon={<Delete />}
           onClick={() => removeFromCar(infoProducto.id)}
-        >
+          >
           eliminar
         </Button> */}
         <Favorite infoProducto={infoProducto} />
       </CardActions>
+      :
+      <CardActions>
+        <Button variant="outlined" color="success">Comprar</Button>
+      </CardActions>
+      }
     </Card>
   );
 };

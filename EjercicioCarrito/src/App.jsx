@@ -5,6 +5,7 @@ import Carrito from "./componentes/Carrito";
 import Login from "./componentes/Login";
 import NavCarrito from "./componentes/NavCarrito";
 import Register from "./componentes/Register";
+import Perfil from "./componentes/Perfil";
 import Wishlist from "./componentes/Wishlist";
 
 import { Favorite, Home, Person2Outlined } from "@mui/icons-material";
@@ -16,6 +17,10 @@ import ListaProductos from "./productos.json";
 import CarritoProvider from "./context/CarritoContext";
 
 function App() {
+  const login = localStorage.getItem("login");
+
+
+
   return (
     <>
       <CarritoProvider>
@@ -24,7 +29,11 @@ function App() {
             <div className="logo">
               {/* <Link to={"/"}> */}
               <a href={"/"}>
-                <img src="./src/assets/electrotop.png" alt="BackPackers" className="logo-image" />
+                <img
+                  src="./src/assets/electrotop.png"
+                  alt="BackPackers"
+                  className="logo-image"
+                />
               </a>
               {/* </Link> */}
             </div>
@@ -47,9 +56,18 @@ function App() {
               </li>
 
               <li>
-                <Link to="/Login">
-                  <Person2Outlined />
-                </Link>
+                {login === "true" ? 
+                  <Link to="/Perfil">
+                    <Person2Outlined />
+                  </Link>
+                 : 
+                  <Link to="/Login">
+                    <Person2Outlined />
+                  </Link>
+                }
+              </li>
+              <li>
+                {login === "true" ? <span>Cerrar sesion</span> : <span></span>}
               </li>
             </ul>
           </div>
@@ -63,6 +81,7 @@ function App() {
             <Route exact path="/Favoritos" element={<Favorite />} />
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
+            <Route exact path="/Perfil" element={<Perfil />} />
           </Routes>
         </Router>
       </CarritoProvider>
