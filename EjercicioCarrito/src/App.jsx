@@ -8,7 +8,7 @@ import Register from "./componentes/Register";
 import Perfil from "./componentes/Perfil";
 import Wishlist from "./componentes/Wishlist";
 
-import { Favorite, Home, Person2Outlined } from "@mui/icons-material";
+import { Favorite, Home, Person2Outlined, Logout, AccountCircle} from "@mui/icons-material";
 
 import "./componentes/styles.css";
 import ListaProductos from "./productos.json";
@@ -18,6 +18,12 @@ import CarritoProvider from "./context/CarritoContext";
 
 function App() {
   const login = localStorage.getItem("login");
+
+  const logout = ()=>{
+    alert("Vas cerrar la sesion")
+    localStorage.removeItem("login");
+    window.location.href = "/";
+  }
 
 
 
@@ -56,18 +62,22 @@ function App() {
               </li>
 
               <li>
-                {login === "true" ? 
+                {login === "true" ? (
                   <Link to="/Perfil">
-                    <Person2Outlined />
+                    <AccountCircle />
                   </Link>
-                 : 
+                ) : (
                   <Link to="/Login">
                     <Person2Outlined />
                   </Link>
-                }
+                )}
               </li>
               <li>
-                {login === "true" ? <span>Cerrar sesion</span> : <span></span>}
+                {login === "true" ? (
+                  <Logout onClick={() => logout()} />
+                ) : (
+                  <span></span>
+                )}
               </li>
             </ul>
           </div>
