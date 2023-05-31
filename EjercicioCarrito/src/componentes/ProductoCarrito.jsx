@@ -23,20 +23,26 @@ const ProductoCarrito = ({data}) => {
     <>
       <div className="item-carrito">
           <div className="item-img">
-            <Avatar
+            <img className="avatar"
               src={data.infoProducto.image}
               alt={data.infoProducto.id + data.infoProducto.nombre}
             />
           </div>
           <div className="item-text">
-            <h4>{data.infoProducto.nombre}</h4>
-            <p className="">$ {formatPrice(data.infoProducto.precio)}</p>
-            <span className="">{cantidad}</span>
+            <h4 className="text-titulo">{data.infoProducto.nombre}</h4>
+            <p className="text-precio">$ {formatPrice(data.infoProducto.precio)}</p>
+            <span className="text-cantidad">Cantidad: {cantidad}</span>
           </div>
           <div className="item-actions">
+            <div className="cantidad-buttons">
+              <button className="btn">-</button>
+              <span>1</span>
+              <button className="btn">+</button>
+            </div>
+
             <Button
-              variant="contained"
-              color="error"
+              variant="outlined" size="small"
+              color="error" 
               onClick={() => removeFromCar(infoProducto.id)}>
                 <Delete />
             </Button>

@@ -89,6 +89,8 @@ const Login = () => {
   
 
   return (
+    <section className="main-container">
+
     <div className="container">
     <h1>Iniciar Sesión</h1>
       <form onSubmit={handleSubmit}>
@@ -102,7 +104,7 @@ const Login = () => {
             value={formData.email}
             onChange={handleInputChange}
             placeholder='Escribe tu correo electrónico'
-          />
+            />
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
         <div className="form-group">
@@ -114,7 +116,7 @@ const Login = () => {
             value={formData.password}
             onChange={handleInputChange}
             placeholder='Escribe tu contraseña'
-          />
+            />
           {errors.password && <p className="error-message">{errors.password}</p>}
         </div>
         <button className='button' type="submit" onClick={()=> login()}>Iniciar Sesión</button>
@@ -127,6 +129,7 @@ const Login = () => {
       <a className='' href='/Register'>Registrarme ahora</a>
     </div>
 
+    </section>
     
   );
 };

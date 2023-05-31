@@ -1,5 +1,5 @@
 import { Route, Link, Routes, BrowserRouter as Router } from "react-router-dom";
-import "./App.css";
+// import "./App.css";
 import Productos from "./componentes/Productos";
 import Carrito from "./componentes/Carrito";
 import Login from "./componentes/Login";
@@ -50,7 +50,7 @@ function App() {
                 </Link>
               </li>
               <li>
-                <Link to="/Carrito">
+                <Link to="/Carrito" className="link">
                   <NavCarrito />
                 </Link>
               </li>
@@ -74,7 +74,7 @@ function App() {
               </li>
               <li>
                 {login === "true" ? (
-                  <Logout onClick={() => logout()} />
+                  <a><Logout onClick={() => logout()} /></a>
                 ) : (
                   <span></span>
                 )}
