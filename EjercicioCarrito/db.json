@@ -27,15 +27,38 @@
       "password": "123456",
       "role": "user"
     },
-
     {
-      "id": 3,
+      "id": 4,
       "name": "Admin",
       "phone": "000 000 0000",
       "address": "Colombia",
       "email": "admin@correo.com",
       "password": "admin123",
       "role": "admin"
+    },
+    {
+      "name": "Pedrito",
+      "phone": "369852",
+      "address": "Colombia",
+      "email": "pedro@correo.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "name": "juan",
+      "phone": "323585",
+      "address": "Colombia",
+      "email": "juan@correo.com",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "name": "Camilo",
+      "phone": "745279",
+      "address": "Colombia",
+      "email": "camilo@correo.com",
+      "password": "123456",
+      "id": 7
     }
   ]
 }
