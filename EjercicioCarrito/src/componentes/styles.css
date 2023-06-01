@@ -8,6 +8,10 @@ body{
     background-color: #EBEBEB;
     /* background-color: #242424; */
 }
+
+.music{
+    display:none;
+}
 /* app */
 .header{
     width: 100%;
@@ -140,9 +144,9 @@ body{
     /* zoom: normal; */
 }
 
-/* .item:hover .description{
+.item:hover .description{
     display: block;
-} */
+}
 
 .name{
     text-transform: uppercase;
@@ -332,13 +336,13 @@ body{
 }
 
 
-
+/* 
 .liked{
     cursor: pointer;
     margin-left: 10px;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .precio-total {
 	border: none;

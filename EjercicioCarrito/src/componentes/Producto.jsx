@@ -11,7 +11,6 @@ import { CarritoContext } from "../context/CarritoContext";
 import Favorite from "./Heart";
 
 const Producto = ({ infoProducto }) => {
-
   const login = localStorage.getItem("login");
   const [carrito, setCarrito] = useContext(CarritoContext);
   const idProducto = infoProducto.id;
@@ -67,28 +66,31 @@ const Producto = ({ infoProducto }) => {
   return (
     <Card sx={{ maxWidth: 345 }} className="item">
       {cantidadXProducto > 0 && (
-        <p className="cantidad">cart: {cantidadXProducto}</p>
+        <p className="cantidad"> {cantidadXProducto}</p>
       )}
       <CardMedia sx={{ height: 140 }}>
-        <img src={infoProducto.image} alt={infoProducto.nombre} className="product-image"/>
+        <img
+          src={infoProducto.image}
+          alt={infoProducto.nombre}
+          className="product-image"
+        />
       </CardMedia>
       <CardContent>
         <h3 className="name">{infoProducto.nombre}</h3>
         <p className="price">{formatPrice(infoProducto.precio)}</p>
         <p className="description">{infoProducto.descripcion}</p>
       </CardContent>
-      { login === "true" ?
-
+      {login === "true" ? (
         <CardActions>
-        <Button
-          variant="contained"
-          color="secondary"
-          startIcon={<AddShoppingCartIcon />}
-          onClick={() => addToCar(infoProducto)}
-        >
-          Añadir al carrito
-        </Button>
-        {/* <Button
+          <Button
+            variant="contained"
+            color="secondary"
+            startIcon={<AddShoppingCartIcon />}
+            onClick={() => addToCar(infoProducto)}
+          >
+            Añadir al carrito
+          </Button>
+          {/* <Button
           variant="contained"
           color="error"
           startIcon={<Delete />}
@@ -96,13 +98,15 @@ const Producto = ({ infoProducto }) => {
           >
           eliminar
         </Button> */}
-        <Favorite infoProducto={infoProducto} />
-      </CardActions>
-      :
-      <CardActions>
-        <Button variant="outlined" color="success">Comprar</Button>
-      </CardActions>
-      }
+          <Favorite infoProducto={infoProducto} />
+        </CardActions>
+      ) : (
+        <CardActions>
+          <Button variant="outlined" color="success">
+            Comprar
+          </Button>
+        </CardActions>
+      )}
     </Card>
   );
 };

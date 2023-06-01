@@ -6,9 +6,15 @@ import Login from "./componentes/Login";
 import NavCarrito from "./componentes/NavCarrito";
 import Register from "./componentes/Register";
 import Perfil from "./componentes/Perfil";
-import Wishlist from "./componentes/Wishlist";
+import "@madzadev/audio-player/dist/index.css";
+import Player1 from "./componentes/Player";
 
-import { Favorite, Home, Person2Outlined, Logout, AccountCircle} from "@mui/icons-material";
+import {
+  Home,
+  Person2Outlined,
+  Logout,
+  AccountCircle,
+} from "@mui/icons-material";
 
 import "./componentes/styles.css";
 import ListaProductos from "./productos.json";
@@ -19,13 +25,11 @@ import CarritoProvider from "./context/CarritoContext";
 function App() {
   const login = localStorage.getItem("login");
 
-  const logout = ()=>{
-    alert("Vas cerrar la sesion")
+  const logout = () => {
+    alert("Vas cerrar la sesion");
     localStorage.removeItem("login");
     window.location.href = "/";
-  }
-
-
+  };
 
   return (
     <>
@@ -56,12 +60,6 @@ function App() {
               </li>
 
               <li>
-                <Link to="/Favoritos">
-                  <Favorite />
-                </Link>
-              </li>
-
-              <li>
                 {login === "true" ? (
                   <Link to="/Perfil">
                     <AccountCircle />
@@ -74,7 +72,9 @@ function App() {
               </li>
               <li>
                 {login === "true" ? (
-                  <a><Logout onClick={() => logout()} /></a>
+                  <a>
+                    <Logout onClick={() => logout()} />
+                  </a>
                 ) : (
                   <span></span>
                 )}
@@ -87,8 +87,9 @@ function App() {
               path="/"
               element={<Productos ListaProductos={ListaProductos} />}
             />
+
             <Route exact path="/Carrito" element={<Carrito />} />
-            <Route exact path="/Favoritos" element={<Favorite />} />
+
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
             <Route exact path="/Perfil" element={<Perfil />} />
