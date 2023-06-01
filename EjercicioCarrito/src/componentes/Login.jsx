@@ -93,7 +93,7 @@ const Login = () => {
   return (
     <section className="main-container">
       <div className="container">
-        <h1>Iniciar Sesión</h1>
+        <h1 className="login">Iniciar Sesión</h1>
         <form onSubmit={handleSubmit} className="form">
           <div className="form-group">
             <label htmlFor="email">Correo Electrónico:</label>

@@ -1,4 +1,4 @@
-import * as React from "react";
+import {useContext}from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
@@ -9,16 +9,59 @@ import Typography from "@mui/material/Typography";
 
 import { Button, BottomNavigationAction } from "@mui/material";
 import { Delete, AddShoppingCart } from "@mui/icons-material";
+
+import {CarritoContext} from "../context/CarritoContext";
 import "./styles.css";
 
 const ProductoCarrito = ({data}) => {
+  const [carrito, setCarrito] = useContext(CarritoContext)
     const cantidad = data.cantidad;
 
-    console.log(data);
+  // console.log(data)
+  const formatPrice = (totalPrice) => {
+    return totalPrice.toLocaleString("es-CO");
+  };
 
-     const formatPrice = (totalPrice) => {
-       return totalPrice.toLocaleString("es-CO");
-     };
+  const addItemToCar = (idProducto) => {
+    setCarrito((currentItems) => {
+      const elementFound = currentItems.find(
+        (element) => element.id === idProducto
+      );
+      if (elementFound === undefined) {
+        return [...currentItems, { id: idProducto, infoProducto, cantidad: 1 }];
+      } else {
+        return currentItems.map((item) => {
+          if (item.id === idProducto) {
+            return { ...item, cantidad: item.cantidad + 1 };
+          } else {
+            return item;
+          }
+        });
+      }
+    });
+  };
+
+  const removeFromCar = (idProducto) => {
+    setCarrito((currentItems) => {
+      if (
+        currentItems.find((element) => element.id === idProducto)?.cantidad ===
+        1
+      ) {
+        return currentItems.filter((element) => element.id !== idProducto);
+      } else {
+        return currentItems.map((element) => {
+          if (element.id === idProducto) {
+            alert("")
+            return { ...element, cantidad: element.cantidad - 1 };
+          } else {
+            return element;
+          }
+        });
+      }
+    });
+  };
+
+
   return (
     <>
       <div className="item-carrito">
@@ -35,15 +78,15 @@ const ProductoCarrito = ({data}) => {
           </div>
           <div className="item-actions">
             <div className="cantidad-buttons">
-              <button className="btn">-</button>
-              <span>1</span>
-              <button className="btn">+</button>
+              <button className="btn" onClick={()=> {removeFromCar(data.idProducto.id)}}>-</button>
+              <span>{cantidad}</span>
+              <button className="btn"  onClick={()=> {addItemToCar(data.idProducto.id)}}>+</button>
             </div>
 
             <Button
               variant="outlined" size="small"
               color="error" 
-              onClick={() => removeFromCar(infoProducto.id)}>
+              onClick={() => {removeFromCar(data.infoProducto.id)}}>
                 <Delete />
             </Button>
           </div>

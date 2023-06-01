@@ -2,7 +2,7 @@ import ProductoCarrito from "./ProductoCarrito";
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 
 import "./styles.css";
 import { Link } from "react-router-dom";
@@ -21,6 +21,8 @@ const Carrito = () => {
     return totalPrice.toLocaleString("es-CO");
   };
 
+  const valorPagar = totalPrice.toString() 
+
   const cleanCart = () => {
     if (
       confirm(
@@ -30,6 +32,41 @@ const Carrito = () => {
       setCarrito([]);
       window.location.href = "/";
     }
+  };
+
+  const initPayPalPayment = () => {
+    
+    window.paypal.Buttons({
+        createOrder: function (data, actions) {
+          
+          return actions.order.create({
+            purchase_units: [
+                {
+                  amount: {
+                    //currency_code: "COP",
+                    value: valorPagar, // Total a pagar en formato de decimales
+                },
+              },
+            ],
+          });
+        },
+        onApprove: function (data, actions) {
+         
+          return actions.order.capture().then(function (details) {
+            
+            console.log(details);
+            
+            window.location.href = "/";
+          });
+        },
+        onError: function (err) {
+          // Se ejecuta en caso de error
+          console.error(err);
+          // Muestra un mensaje de error al usuario
+          alert("Ocurrió un error al procesar el pago. Por favor, inténtalo de nuevo.");
+        },
+      })
+      .render("#paypal-button-container"); // ID del contenedor donde se mostrará el botón de PayPal
   };
 
   return (
@@ -43,7 +80,7 @@ const Carrito = () => {
             ))
           ) : (
             <>
-              <h2>No Has agregado productos al carrito aún!.</h2>
+              <h2>No Has agregado productos al carrito aún!</h2>
               <Link to="/">
                 <Button variant="contained" color="secondary">
                   Comprar
@@ -71,7 +108,7 @@ const Carrito = () => {
             </li>
           </ul>
           <div className="resumen-actions">
-            <Button variant="contained" color="success">
+            <Button variant="contained" color="success" onClick={initPayPalPayment}>
               Procesar compra
             </Button>
             <Button variant="outlined" size="small" onClick={() => cleanCart()}>
@@ -80,8 +117,13 @@ const Carrito = () => {
           </div>
         </div>
       </div>
+      <div className="paypal" id="paypal-button-container"></div>
     </section>
   );
 };
 
 export default Carrito;
+
+
+
+

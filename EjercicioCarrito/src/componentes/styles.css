@@ -114,7 +114,7 @@ body{
 /* Productos */
 .items-list{
     margin: auto auto;
-    width: 90%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
@@ -169,6 +169,8 @@ body{
     font-size: 12px;
     display: none;
 }
+
+
 
 /* Carrito */
 .detalle-carrito{
@@ -388,13 +390,7 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
-form label{
-    display: block;
-    text-align: left;
-    font-weight: 500;
-    margin-bottom: 5px;
-    margin-left: 38px;
-}
+
 
 .form{
     width: 95%;
@@ -413,6 +409,8 @@ form label{
     width: 80%;
     margin: 0px auto 10px auto;
 }
+
+
 
 .input{
     width: 80%;
@@ -462,5 +460,38 @@ form label{
 
 .login {
     color: #7B1FA2;
+    padding: 18px;
     
   }
+
+.btn {
+    padding: 18px;
+    
+  }
+
+.paypal{
+    
+    border-radius: 4px;
+    max-width: 350px;
+    width: 350px;
+    padding: 20px;
+    
+    margin: auto auto;
+    z-index: 2;
+    position: absolute;
+    
+    justify-content: start;
+    align-items: start;
+    text-align: center;
+    right: -980px;
+    top:65%;
+    
+}
+
+.paypal::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.377);
+    width: 100%;
+    height: 100%;
+}
+
