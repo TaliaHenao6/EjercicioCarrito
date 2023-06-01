@@ -76,7 +76,7 @@ const Register = () => {
   return (
     <section className="main-container">
     <div className="container">
-      <h1>Crea una cuenta</h1>
+      <h1 className="login">Crea una cuenta</h1>
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
           <label htmlFor="name">Nombre:</label>
@@ -153,7 +153,7 @@ const Register = () => {
       </form>
       {successMessage && <p className="success-message">{successMessage}</p>}
       <div className="form-info">
-        <p className="nous">¿Ya tienes un usuario, quieres iniciar sesión?</p>
+        <p className="nous">¿Ya tienes un usuario?</p>
         <a className='btn' type="submit" href='/Login'>Iniciar Sesión</a>
 
       </div>

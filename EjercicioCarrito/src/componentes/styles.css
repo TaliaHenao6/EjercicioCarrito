@@ -110,7 +110,7 @@ body{
 /* Productos */
 .items-list{
     margin: auto auto;
-    width: 90%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
@@ -410,6 +410,8 @@ form label{
     margin: 0px auto 10px auto;
 }
 
+
+
 .input{
     width: 80%;
     padding: 8px;
@@ -458,5 +460,11 @@ form label{
 
 .login {
     color: #7B1FA2;
+    padding: 18px;
+    
+  }
+
+.btn {
+    padding: 18px;
     
   }

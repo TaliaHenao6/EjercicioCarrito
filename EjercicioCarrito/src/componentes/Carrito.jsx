@@ -43,7 +43,7 @@ const Carrito = () => {
             ))
           ) : (
             <>
-              <h2>No Has agregado productos al carrito aún!.</h2>
+              <h2>No Has agregado productos al carrito aún!</h2>
               <Link to="/">
                 <Button variant="contained" color="secondary">
                   Comprar
