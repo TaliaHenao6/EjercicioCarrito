@@ -20,7 +20,7 @@ function App() {
   const login = localStorage.getItem("login");
 
   const logout = ()=>{
-    alert("Vas cerrar la sesion")
+    alert("Vas cerrar la sesión")
     localStorage.removeItem("login");
     window.location.href = "/";
   }

@@ -67,7 +67,7 @@ const Producto = ({ infoProducto }) => {
   return (
     <Card sx={{ maxWidth: 345 }} className="item">
       {cantidadXProducto > 0 && (
-        <p className="cantidad">cart: {cantidadXProducto}</p>
+        <p className="cantidad"> {cantidadXProducto}</p>
       )}
       <CardMedia sx={{ height: 140 }}>
         <img src={infoProducto.image} alt={infoProducto.nombre} className="product-image"/>
