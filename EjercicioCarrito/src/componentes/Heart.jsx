@@ -4,7 +4,7 @@ import { CarritoContext } from "../context/CarritoContext";
 import "./Styles.css";
 
 const Heart = ({ infoProducto }) => {
-  const [like, setLike] = useState(false);
+  // const [like, setLike] = useState(false);
   const [favorito, setfavorito] = useContext(CarritoContext);
 
   const addToFavorite = () => {
@@ -45,13 +45,13 @@ const Heart = ({ infoProducto }) => {
   };
   return (
     <>
-      <div className="liked" color="primary" onClick={handleClick}>
+      {/* <div className="liked" color="primary" onClick={handleClick}>
         {like == true ? (
           <Favorite color="error" />
         ) : (
           <FavoriteBorder color="error" />
         )}
-      </div>
+      </div> */}
     </>
   );
 };
