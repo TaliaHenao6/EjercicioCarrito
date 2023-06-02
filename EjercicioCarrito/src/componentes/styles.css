@@ -495,3 +495,10 @@ body{
     height: 100%;
 }
 
+.container{
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    
+}
+
