@@ -60,10 +60,13 @@ function App() {
                 </Link>
               </li>
               <li>
-                {rol === "admin" ? (
-                  <Link to="/Admin">panel adminitrador</Link>
-                ) : //
-                null}
+                {
+                  rol === "admin" && login === "true" ? (
+                    <Link to="/Admin">panel adminitrador</Link>
+                  ) : (
+                    <span></span>
+                  ) //
+                }
               </li>
               <li>
                 {login === "true" ? (
