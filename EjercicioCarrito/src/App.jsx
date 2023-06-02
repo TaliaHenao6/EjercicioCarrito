@@ -6,6 +6,7 @@ import Login from "./componentes/Login";
 import NavCarrito from "./componentes/NavCarrito";
 import Register from "./componentes/Register";
 import Perfil from "./componentes/Perfil";
+import Admin from "./componentes/Admin";
 import "@madzadev/audio-player/dist/index.css";
 import Player1 from "./componentes/Player";
 
@@ -24,7 +25,7 @@ import CarritoProvider from "./context/CarritoContext";
 
 function App() {
   const login = localStorage.getItem("login");
-
+  const rol = localStorage.getItem("rol");
   const logout = () => {
     alert("Vas cerrar la sesión");
     localStorage.removeItem("login");
@@ -58,7 +59,12 @@ function App() {
                   <NavCarrito />
                 </Link>
               </li>
-
+              <li>
+                {rol === "admin" ? (
+                  <Link to="/Admin">panel adminitrador</Link>
+                ) : //
+                null}
+              </li>
               <li>
                 {login === "true" ? (
                   <Link to="/Perfil">
@@ -89,7 +95,7 @@ function App() {
             />
 
             <Route exact path="/Carrito" element={<Carrito />} />
-
+            <Route exact path="/Admin" element={<Admin />} />
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
             <Route exact path="/Perfil" element={<Perfil />} />
