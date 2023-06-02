@@ -23,6 +23,8 @@ const Carrito = () => {
 
   const valorPagar = totalPrice.toString() 
 
+  
+
   const cleanCart = () => {
     if (
       confirm(
