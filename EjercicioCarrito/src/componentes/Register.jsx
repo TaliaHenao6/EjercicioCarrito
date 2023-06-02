@@ -189,6 +189,7 @@ const Register = () => {
           </div>
           <div className="form-group">
             <Button
+              className="btn3"
               variant="contained"
               size="small"
               color="secondary"

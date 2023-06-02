@@ -169,7 +169,15 @@ body{
     font-size: 12px;
     display: none;
 }
-
+.btncomp{
+    color: rgb(56, 142, 60);
+    width: 100%;
+    padding: 8px;
+    /*border: 2px solid rgb(56, 142, 60);*/
+    border: 2px solid #2E7D32;
+    border-radius: 6px;
+    font-weight: 600;
+}
 
 
 /* Carrito */
@@ -430,6 +438,7 @@ form label{
 
 .button{
     background-color: #7B1FA2;
+    
 }
   
 .nous{
@@ -467,31 +476,31 @@ form label{
 .login {
     color: #7B1FA2;
     padding: 18px;
-    
   }
 
 .btn {
     padding: 18px;
-    
+  }
+
+.btn3{
+    padding: 18px;
+    width: 80%;
+    border-radius: 3px;
   }
 
 .paypal{
-    
     border-radius: 4px;
     max-width: 350px;
     width: 350px;
     padding: 20px;
-    
     margin: auto auto;
     z-index: 2;
     position: absolute;
-    
     justify-content: start;
     align-items: start;
     text-align: center;
     right: -980px;
     top:65%;
-    
 }
 
 .paypal::before{
@@ -505,6 +514,5 @@ form label{
     padding: 20px;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    
 }
 

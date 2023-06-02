@@ -124,7 +124,7 @@ const Login = () => {
             )}
           </div>
           <div className="form-group">
-            <Button variant="contained" color="secondary" size="small" type="submit" onClick={() => login()}>
+            <Button className="btn3" variant="contained" color="secondary" size="small" type="submit" onClick={() => login()}>
               Iniciar Sesión
             </Button>
           </div>
