@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import md5 from "md5";
-import Cookies from "universal-cookie";
 
 import {Button} from "@mui/material"
 
 import "./styles.css";
 
 const baseUrl = "http://localhost:3001/usuarios";
-const cookies = new Cookies();
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -76,6 +74,7 @@ const Login = () => {
           const respuesta = response[0];
           localStorage.setItem("login", true);
           localStorage.setItem("userId", respuesta.id);
+          localStorage.setItem("role", respuesta.role);
           alert(`Bievenido: ${respuesta.name}`);
           window.location.href = "/";
         } else {

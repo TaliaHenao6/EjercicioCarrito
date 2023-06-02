@@ -38,6 +38,7 @@ const Register = () => {
         address: "",
         email: "",
         password: "",
+        rol: "user"
       });
       setTimeout(() => {
         setSuccessMessage("");
@@ -183,7 +184,7 @@ const Register = () => {
               className="input"
               id="rol"
               name="rol"
-              value="user"
+              value={formData.rol}
               disabled={true}
             />
           </div>

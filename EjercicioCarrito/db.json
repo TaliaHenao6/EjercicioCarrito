@@ -59,6 +59,22 @@
       "email": "camilo@correo.com",
       "password": "123456",
       "id": 7
+    },
+    {
+      "name": "Leopoldo",
+      "phone": "8520017",
+      "address": "Colombia",
+      "email": "leopoldo@correo.com",
+      "password": "12456",
+      "id": 8
+    },
+    {
+      "name": "Leopoldo",
+      "phone": "8520017",
+      "address": "Colombia",
+      "email": "leopoldo@correo.com",
+      "password": "123456",
+      "id": 9
     }
   ]
 }
