@@ -25,7 +25,7 @@ import CarritoProvider from "./context/CarritoContext";
 
 function App() {
   const login = localStorage.getItem("login");
-  const role = localStorage.getItem("role");
+  const rol = localStorage.getItem("rol");
   const logout = () => {
     alert("Vas cerrar la sesión");
     localStorage.removeItem("login");
@@ -60,7 +60,7 @@ function App() {
                 </Link>
               </li>
               <li>
-                {role === "admin" ? (
+                {rol === "admin" ? (
                   <Link to="/Admin">panel adminitrador</Link>
                 ) : //
                 null}

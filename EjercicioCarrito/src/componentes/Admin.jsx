@@ -1,22 +1,26 @@
+import "./styles.css";
+
 const Admin = () => {
   return (
     <section className="main-container">
       <div className="container">
         <h1>MODO ADMINISTRADOR</h1>
-        <div className=" container">
+        <div className="">
           <img src="./src/images/admin.jpg" alt="Admin" />
         </div>
-        <div className="container">
+        <div className="">
           <strong>ROL:</strong>
         </div>
-        <div className="container">
+        <div className="">
           <strong>NOMBRE:</strong>
-          <div className="container">
+          <div className="">
             <strong>EMAIL:</strong>
           </div>
           <div className="button">
             <button>AÑADIR PRODUCTO</button>
+            <button>ELIMINAR PRODUCTOS</button>
             <button>VER USUARIOS</button>
+            <button>AGREGAR USUARIOS</button>
           </div>
         </div>
       </div>
