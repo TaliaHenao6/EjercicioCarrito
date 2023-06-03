@@ -102,7 +102,14 @@ const Producto = ({ infoProducto }) => {
         </CardActions>
       ) : (
         <CardActions>
-          <a className="btncomp" variant="contained" color="succes" href="/Login">COMPRAR</a>
+          <a
+            className="btncomp"
+            variant="contained"
+            color="succes"
+            href="/Login"
+          >
+            COMPRAR
+          </a>
         </CardActions>
       )}
     </Card>
