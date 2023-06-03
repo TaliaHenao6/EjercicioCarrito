@@ -1,4 +1,4 @@
-import Producto from "./producto";
+import Producto from "./Producto";
 
 const Productos = ({ ListaProductos, addToCar, removeToCar }) => {
   return (

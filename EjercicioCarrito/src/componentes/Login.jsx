@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import md5 from "md5";
 
-import {Button} from "@mui/material"
+import { Button } from "@mui/material";
 
 import "./styles.css";
 
@@ -123,7 +123,17 @@ const Login = () => {
             )}
           </div>
           <div className="form-group">
+<<<<<<< HEAD
+            <Button
+              variant="contained"
+              color="secondary"
+              size="small"
+              type="submit"
+              onClick={() => login()}
+            >
+=======
             <Button className="btn3" variant="contained" color="secondary" size="small" type="submit" onClick={() => login()}>
+>>>>>>> aca24db89e83eaed9299608b4de2e183143bc795
               Iniciar Sesión
             </Button>
           </div>
@@ -131,11 +141,10 @@ const Login = () => {
         {successMessage && <p className="success-message">{successMessage}</p>}
 
         <div className="form-info">
-        <p className="nous">¿No tienes usuario para iniciar sesión?</p>
-        <a className="btn" href="/Register">
-          Registrarme ahora
-        </a>
-
+          <p className="nous">¿No tienes usuario para iniciar sesión?</p>
+          <a className="btn" href="/Register">
+            Registrarme ahora
+          </a>
         </div>
       </div>
     </section>

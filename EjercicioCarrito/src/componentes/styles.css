@@ -169,6 +169,8 @@ body{
     font-size: 12px;
     display: none;
 }
+<<<<<<< HEAD
+=======
 .btncomp{
     color: rgb(56, 142, 60);
     width: 100%;
@@ -179,6 +181,7 @@ body{
     font-weight: 600;
 }
 
+>>>>>>> aca24db89e83eaed9299608b4de2e183143bc795
 
 /* Carrito */
 .detalle-carrito{
@@ -397,8 +400,74 @@ body{
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
-
-
+/*admin*/
+/* .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FFCC99; /* Tono cálido */
+  /* } */
+/*   
+  .containers {
+    text-align: center;
+  }
+   */
+  /* h1 {
+    margin-top: 20px;
+    float: left;
+  } */
+  
+  /* .ad {
+    margin-top: 20px;
+  } */
+  
+  /* .role {
+    text-align: center;
+    margin-top: 20px;
+  } */
+  
+  /* .nam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  } */
+  
+  /* .cor {
+    margin-top: 10px;
+  } */
+  
+  /* .max,
+  .men,
+  .see,
+  .add {
+    text-align: left;
+    margin-top: 20px;
+    float: left;
+  } */
+   
+  /* .max button,
+  .men button,
+  .see button,
+  .add button {
+    display: block;
+    width: 200px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FF6347; /* Tono cálido */
+    /* color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;  */
+   
+   
+   
+  /* } */
+  
+  
+  
 
 .form{
     width: 95%;
