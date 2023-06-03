@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 body{
-    background-color: #EBEBEB;
+    background-color: #ececec;
     /* background-color: #242424; */
 }
 
@@ -103,6 +103,8 @@ body{
     padding: 0px 20px;
     text-align: center;
     margin-top: 10px;
+    min-height: 80vh;
+    
 }
 
 .main-container h1{
@@ -417,7 +419,7 @@ table {
   }
   
   th {
-    background-color: #882bb7;
+    background-color: #9DB2BF;
   }
   
   button {
@@ -575,4 +577,56 @@ form label{
     background-color: rgb(255, 255, 255);
     text-align: center;
 }
-
+.footer {
+    background-color: #9DB2BF;
+    color: #fff;
+    padding: 20px;
+    position:relative;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.377);
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-column {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .footer-logo img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .footer-info p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .footer-social a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 28px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer-social a:hover {
+    color: #9f0000;
+  }
+  
