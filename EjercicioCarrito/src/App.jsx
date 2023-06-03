@@ -1,5 +1,6 @@
 import { Route, Link, Routes, BrowserRouter as Router } from "react-router-dom";
 // import "./App.css";
+import Principal from "./componentes/Principal";
 import Productos from "./componentes/Productos";
 import Carrito from "./componentes/Carrito";
 import Login from "./componentes/Login";
@@ -9,6 +10,7 @@ import Perfil from "./componentes/Perfil";
 import Admin from "./componentes/Admin";
 import "@madzadev/audio-player/dist/index.css";
 import Player1 from "./componentes/Player";
+
 
 import {
   Home,
@@ -50,7 +52,7 @@ function App() {
             </div>
             <ul className="nav">
               <li>
-                <Link to="/">
+                <Link to="/Principal">
                   <Home />
                 </Link>
               </li>
@@ -62,7 +64,7 @@ function App() {
               <li>
                 {
                   rol === "admin" && login === "true" ? (
-                    <Link to="/Admin">panel adminitrador</Link>
+                    <Link to="/Admin">panel administrador</Link>
                   ) : (
                     <span></span>
                   ) //
@@ -97,6 +99,7 @@ function App() {
               element={<Productos ListaProductos={ListaProductos} />}
             />
 
+            <Route exact path="/Principal" element={<Principal />} />
             <Route exact path="/Carrito" element={<Carrito />} />
             <Route exact path="/Admin" element={<Admin />} />
             <Route exact path="/Login" element={<Login />} />
