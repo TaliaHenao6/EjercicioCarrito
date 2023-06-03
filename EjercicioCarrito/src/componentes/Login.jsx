@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import md5 from "md5";
-import Cookies from "universal-cookie";
 
 import { Button } from "@mui/material";
 
 import "./styles.css";
 
 const baseUrl = "http://localhost:3001/usuarios";
-const cookies = new Cookies();
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -76,6 +74,7 @@ const Login = () => {
           const respuesta = response[0];
           localStorage.setItem("login", true);
           localStorage.setItem("userId", respuesta.id);
+          localStorage.setItem("role", respuesta.role);
           alert(`Bievenido: ${respuesta.name}`);
           window.location.href = "/";
         } else {
@@ -124,6 +123,7 @@ const Login = () => {
             )}
           </div>
           <div className="form-group">
+<<<<<<< HEAD
             <Button
               variant="contained"
               color="secondary"
@@ -131,6 +131,9 @@ const Login = () => {
               type="submit"
               onClick={() => login()}
             >
+=======
+            <Button className="btn3" variant="contained" color="secondary" size="small" type="submit" onClick={() => login()}>
+>>>>>>> aca24db89e83eaed9299608b4de2e183143bc795
               Iniciar Sesión
             </Button>
           </div>
