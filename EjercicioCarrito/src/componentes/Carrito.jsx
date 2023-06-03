@@ -32,9 +32,6 @@ const Carrito = () => {
   const total = totalPrice + iva;
 
   const USD = total  / valorDolar;
-
-  
-
   const cleanCart = () => {
     if (
       confirm(
