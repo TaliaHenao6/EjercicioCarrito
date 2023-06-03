@@ -2,19 +2,24 @@ const Productos2 = () => {
   return (
     <table>
       <tr>
-        <th>Marca</th>
-        <th>Precio</th>
-        <th>Nombre</th>
+        <th>MARCA</th>
+        <th>PRECIO</th>
+        <th>NOMBRE</th>
+        <th>DESCRIPCION</th>
+        <th>ACIONES</th>
       </tr>
       <tr>
         <td>LG</td>
-        <td>Muy Caro</td>
-        <td>avion</td>
+        <td>MUY CARO</td>
+        <td>AVION</td>
+        <td>ALGO MUY CARO</td>
+        <td>
+          <button> EDITAR PRODUCTO</button>
+          <button>ELIMINAR PRODUCTO</button>
+        </td>
       </tr>
       <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
+        <button>AGREGAR USER</button>
       </tr>
     </table>
   );

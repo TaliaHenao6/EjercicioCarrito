@@ -27,7 +27,7 @@ import CarritoProvider from "./context/CarritoContext";
 
 function App() {
   const login = localStorage.getItem("login");
-  const rol = localStorage.getItem("rol");
+  const rol = localStorage.getItem("role");
   const logout = () => {
     alert("Vas cerrar la sesión");
     localStorage.removeItem("login");
