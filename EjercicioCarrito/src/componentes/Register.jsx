@@ -13,6 +13,7 @@ const Register = () => {
     address: "",
     email: "",
     password: "",
+    role:"user"
   });
   const [errors, setErrors] = useState({
     name: "",
@@ -20,6 +21,7 @@ const Register = () => {
     address: "",
     email: "",
     password: "",
+    role:""
   });
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -38,7 +40,7 @@ const Register = () => {
         address: "",
         email: "",
         password: "",
-        rol: "user"
+        role: "user"
       });
       setTimeout(() => {
         setSuccessMessage("");
@@ -83,10 +85,10 @@ const Register = () => {
     const body = formData;
     await axios.post(baseUrl, body
     )
-    .then((response)=>{
-      console.log(response.data);
-      return response.data
-    })
+    // .then((response)=>{
+    //   console.log(response.data);
+    //   return response.data
+    // })
     .then((response)=>{
       if (response.length > 0) {
         const resultado = response[0];
@@ -110,6 +112,17 @@ const Register = () => {
       <div className="container">
         <h1>Crea una cuenta</h1>
         <form onSubmit={handleSubmit} className="form">
+          <div className="form-group">
+            <label htmlFor="">Role:</label>
+            <input
+              type="text"
+              className="input"
+              id="role"
+              name="role"
+              value={formData.role}
+              disabled={true}
+            />
+          </div>
           <div className="form-group">
             <label htmlFor="name">Nombre:</label>
             <input
@@ -176,17 +189,6 @@ const Register = () => {
             {errors.password && (
               <p className="error-message">{errors.password}</p>
             )}
-          </div>
-          <div className="form-group">
-            <label htmlFor="">Rol:</label>
-            <input
-              type="text"
-              className="input"
-              id="rol"
-              name="rol"
-              value={formData.rol}
-              disabled={true}
-            />
           </div>
           <div className="form-group">
             <Button
