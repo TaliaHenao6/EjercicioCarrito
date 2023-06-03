@@ -391,78 +391,72 @@ body{
 /* Forms */
 .container {
     margin: 15px auto;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(114, 114, 114);
     border-radius: 4px;
     max-width: 400px;
     padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(210, 210, 210, 0.2);
   }
 /*admin*/
-/* .main-container {
-    display: flex;
+
+table {
+    width: 600px;
+    margin: 20px 0 auto;
+    border-collapse: collapse;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #FFCC99; /* Tono cálido */
-  /* } */
-/*   
-  .containers {
-    text-align: center;
+    height: 20px;
   }
-   */
-  /* h1 {
-    margin-top: 20px;
-    float: left;
-  } */
   
-  /* .ad {
-    margin-top: 20px;
-  } */
-  
-  /* .role {
+  th,
+  td {
+    padding: 8px;
     text-align: center;
-    margin-top: 20px;
-  } */
+    border-bottom: 1px solid #717171;
+    width: 220px;
+    height: 10px;
+  }
   
-  /* .nam {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  } */
+  th {
+    background-color: #882bb7;
+  }
   
-  /* .cor {
-    margin-top: 10px;
-  } */
-  
-  /* .max,
-  .men,
-  .see,
-  .add {
-    text-align: left;
-    margin-top: 20px;
-    float: left;
-  } */
-   
-  /* .max button,
-  .men button,
-  .see button,
-  .add button {
+  button {
     display: block;
-    width: 200px;
     margin-top: 10px;
-    padding: 10px;
-    background-color: #FF6347; /* Tono cálido */
-    /* color: white;
+    padding: 8px 12px;
+    background-color: #9370db; /* Color lila */
+    color: black; /* Color de texto negro */
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    align-self: flex-start;  */
-   
-   
-   
-  /* } */
+   height: 30px;
+  }
   
+  button:hover {
+    background-color: #6d5da1; /* Color lila oscuro */
+    
+  }
+  
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 8px;
+    
+  }
+  
+
+  td, th {
+    border: 1px solid #878787;
+    text-align: left;
+    padding: 10px;
+    
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ffffff;
+    height: 60px;
+  }  
   
   
 

@@ -9,6 +9,7 @@ import Productos2 from "./admin/Productos2";
 import Usuarios from "./admin/Usuarios";
 import { Info } from "@mui/icons-material";
 import InfoPersonal from "./admin/InfoPersonal";
+import "./styles.css";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,7 +57,7 @@ export default function VerticalTabs() {
         flexGrow: 1,
         bgcolor: "background.paper",
         display: "flex",
-        height: 224,
+        height: 250,
       }}
     >
       <Tabs
