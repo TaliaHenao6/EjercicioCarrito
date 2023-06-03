@@ -3,7 +3,7 @@ import axios from "axios";
 import md5 from "md5";
 import Cookies from "universal-cookie";
 
-import {Button} from "@mui/material"
+import { Button } from "@mui/material";
 
 import "./styles.css";
 
@@ -124,7 +124,13 @@ const Login = () => {
             )}
           </div>
           <div className="form-group">
-            <Button variant="contained" color="secondary" size="small" type="submit" onClick={() => login()}>
+            <Button
+              variant="contained"
+              color="secondary"
+              size="small"
+              type="submit"
+              onClick={() => login()}
+            >
               Iniciar Sesión
             </Button>
           </div>
@@ -132,11 +138,10 @@ const Login = () => {
         {successMessage && <p className="success-message">{successMessage}</p>}
 
         <div className="form-info">
-        <p className="nous">¿No tienes usuario para iniciar sesión?</p>
-        <a className="btn" href="/Register">
-          Registrarme ahora
-        </a>
-
+          <p className="nous">¿No tienes usuario para iniciar sesión?</p>
+          <a className="btn" href="/Register">
+            Registrarme ahora
+          </a>
         </div>
       </div>
     </section>

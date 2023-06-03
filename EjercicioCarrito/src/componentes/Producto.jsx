@@ -102,7 +102,7 @@ const Producto = ({ infoProducto }) => {
         </CardActions>
       ) : (
         <CardActions>
-          <Button variant="outlined" color="success" >
+          <Button variant="outlined" color="success">
             Comprar
           </Button>
         </CardActions>

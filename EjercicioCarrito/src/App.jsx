@@ -15,6 +15,8 @@ import {
   Person2Outlined,
   Logout,
   AccountCircle,
+  Blind,
+  Boy,
 } from "@mui/icons-material";
 
 import "./componentes/styles.css";
@@ -62,7 +64,10 @@ function App() {
               <li>
                 {
                   rol === "admin" && login === "true" ? (
-                    <Link to="/Admin">panel adminitrador</Link>
+                    <Link to="/Admin">
+                      {" "}
+                      <Boy />
+                    </Link>
                   ) : (
                     <span></span>
                   ) //

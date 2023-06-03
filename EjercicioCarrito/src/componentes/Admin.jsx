@@ -1,28 +1,36 @@
 import "./styles.css";
+import Admi from "./Admi";
 
 const Admin = () => {
   return (
     <section className="main-container">
-      <div className="container">
+      <div className="containers">
         <h1>MODO ADMINISTRADOR</h1>
-        <div className="">
+        <Admi />
+        {/* <div className="ad">
           <img src="./src/images/admin.jpg" alt="Admin" />
         </div>
-        <div className="">
+        <div className="role">
           <strong>ROL:</strong>
         </div>
-        <div className="">
+        <div className="nam">
           <strong>NOMBRE:</strong>
-          <div className="">
+          <div className="cor">
             <strong>EMAIL:</strong>
           </div>
-          <div className="button">
+          <div className="max">
             <button>AÑADIR PRODUCTO</button>
+          </div>
+          <div className="men">
             <button>ELIMINAR PRODUCTOS</button>
+          </div>
+          <div className="see">
             <button>VER USUARIOS</button>
+          </div>
+          <div className="add">
             <button>AGREGAR USUARIOS</button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
