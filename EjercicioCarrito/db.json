@@ -61,20 +61,31 @@
       "id": 7
     },
     {
-      "name": "Leopoldo",
-      "phone": "8520017",
+      "name": "usuario",
+      "phone": "145896325",
       "address": "Colombia",
-      "email": "leopoldo@correo.com",
-      "password": "12456",
-      "id": 8
+      "email": "usuario@correo.com",
+      "password": "123456",
+      "role": "user",
+      "id": 10
     },
     {
       "name": "Leopoldo",
-      "phone": "8520017",
+      "phone": "105145010",
       "address": "Colombia",
       "email": "leopoldo@correo.com",
       "password": "123456",
-      "id": 9
+      "role": "user",
+      "id": 11
+    },
+    {
+      "name": "Carlos",
+      "phone": "0000000",
+      "address": "Colombia",
+      "email": "carlos@correo.com",
+      "password": "123456",
+      "role": "user",
+      "id": 12
     }
   ]
 }

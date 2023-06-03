@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import {Button} from "@mui/material";
-
+import { Button } from "@mui/material";
 import axios from "axios";
 import "./styles.css";
 
@@ -13,7 +12,7 @@ const Register = () => {
     address: "",
     email: "",
     password: "",
-    role:"user"
+    role: "user",
   });
   const [errors, setErrors] = useState({
     name: "",
@@ -21,7 +20,7 @@ const Register = () => {
     address: "",
     email: "",
     password: "",
-    role:""
+    role: "",
   });
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -34,17 +33,19 @@ const Register = () => {
     const newErrors = validateForm(formData);
     if (Object.keys(newErrors).length === 0) {
       setSuccessMessage("Usuario creado con éxito");
+      const dataToSend = { ...formData };
       setFormData({
         name: "",
         phone: "",
         address: "",
         email: "",
         password: "",
-        role: "user"
+        role: "user",
       });
       setTimeout(() => {
         setSuccessMessage("");
       }, 3000);
+      signIn(dataToSend);
     } else {
       setErrors(newErrors);
     }
@@ -80,32 +81,24 @@ const Register = () => {
     return errors;
   };
 
-
-  const signIn = async () =>{
-    const body = formData;
-    await axios.post(baseUrl, body
-    )
-    // .then((response)=>{
-    //   console.log(response.data);
-    //   return response.data
-    // })
-    .then((response)=>{
-      if (response.length > 0) {
-        const resultado = response[0];
+  const signIn = async (data) => {
+    try {
+      const response = await axios.post(baseUrl, data);
+      if (response.data.length > 0) {
+        const resultado = response.data[0];
         localStorage.setItem("login", true);
         localStorage.setItem("userId", resultado.id);
-        alert(`Bievenido: ${respuesta.name}`);
+        localStorage.setItem("role", resultado.role);
+        alert(`Bienvenido: ${resultado.name}`);
         window.location.href = "/";
-        console.log(response);
+        console.log(response.data);
       } else {
-        alert("No se puedo hacer el registro");
+        alert("FALLO EL REGISTRO");
       }
-
-    })
-    .catch((error) =>{
-
-    })
-  } 
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <section className="main-container">
@@ -150,7 +143,7 @@ const Register = () => {
             {errors.email && <p className="error-message">{errors.email}</p>}
           </div>
           <div className="form-group">
-            <label htmlFor="phone">Telefono:</label>
+            <label htmlFor="phone">Teléfono:</label>
             <input
               className="input"
               type="number"
@@ -163,7 +156,7 @@ const Register = () => {
             {errors.phone && <p className="error-message">{errors.phone}</p>}
           </div>
           <div className="form-group">
-            <label htmlFor="name">Dirección:</label>
+            <label htmlFor="address">Dirección:</label>
             <input
               className="input"
               type="text"
@@ -173,7 +166,9 @@ const Register = () => {
               onChange={handleInputChange}
               placeholder="Escribe tu dirección"
             />
-            {errors.name && <p className="error-message">{errors.address}</p>}
+            {errors.address && (
+              <p className="error-message">{errors.address}</p>
+            )}
           </div>
           <div className="form-group">
             <label htmlFor="password">Contraseña:</label>
@@ -192,12 +187,11 @@ const Register = () => {
           </div>
           <div className="form-group">
             <Button
-              className="btn3"
               variant="contained"
               size="small"
               color="secondary"
               type="submit"
-              onClick={() => signIn()}
+              className="btn3"
             >
               Registrarme
             </Button>
@@ -205,8 +199,10 @@ const Register = () => {
         </form>
         {successMessage && <p className="success-message">{successMessage}</p>}
         <div className="form-info">
-          <p className="nous">¿Ya tienes un usuario, quieres iniciar sesión?</p>
-          <a className="btn" type="submit" href="/Login">
+          <p className="nous">
+            ¿Ya tienes un usuario y quieres iniciar sesión?
+          </p>
+          <a className="btn" href="/Login">
             Iniciar Sesión
           </a>
         </div>

@@ -123,17 +123,7 @@ const Login = () => {
             )}
           </div>
           <div className="form-group">
-<<<<<<< HEAD
-            <Button
-              variant="contained"
-              color="secondary"
-              size="small"
-              type="submit"
-              onClick={() => login()}
-            >
-=======
             <Button className="btn3" variant="contained" color="secondary" size="small" type="submit" onClick={() => login()}>
->>>>>>> aca24db89e83eaed9299608b4de2e183143bc795
               Iniciar Sesión
             </Button>
           </div>
