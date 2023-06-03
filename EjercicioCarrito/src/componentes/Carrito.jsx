@@ -21,7 +21,17 @@ const Carrito = () => {
     return totalPrice.toLocaleString("es-CO");
   };
 
+  const formatUSD = (USD) =>{
+    return USD.toLocaleString("US")
+  }
+
   const valorPagar = totalPrice.toString() 
+  const valorDolar = 4346.00;
+
+  const iva = totalPrice * 0.05;
+  const total = totalPrice + iva;
+
+  const USD = total  / valorDolar;
 
   
 
@@ -46,7 +56,7 @@ const Carrito = () => {
                 {
                   amount: {
                     //currency_code: "COP",
-                    value: valorPagar, // Total a pagar en formato de decimales
+                    value: total, // Total a pagar en formato de decimales
                 },
               },
             ],
@@ -101,16 +111,27 @@ const Carrito = () => {
             </li>
             <li>
               <p>subtotal </p>
-              <p className="left">$0</p>
+              <p className="left"> {formatPrice(totalPrice)}</p>
             </li>
-            {/* <li><p>envio</p></li> */}
+            <li>
+              <p>IVA</p>
+              <p className="left">{formatPrice(iva)}</p>
+              </li>
             <li className="resumen-total">
-              <h3>total</h3>{" "}
-              <h3 className="left">${formatPrice(totalPrice)}</h3>
+              <h3>USD</h3>
+              <h3 className="left">$ {formatUSD(USD)} </h3>
+            </li>
+            <li className="resumen-total">
+              <h3>total</h3>
+              <h3 className="left">$ {formatPrice(total)} </h3>
             </li>
           </ul>
           <div className="resumen-actions">
-            <Button variant="contained" color="success" onClick={initPayPalPayment}>
+            <Button
+              variant="contained"
+              color="success"
+              onClick={initPayPalPayment}
+            >
               Procesar compra
             </Button>
             <Button variant="outlined" size="small" onClick={() => cleanCart()}>
