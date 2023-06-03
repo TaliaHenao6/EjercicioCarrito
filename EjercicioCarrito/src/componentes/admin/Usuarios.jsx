@@ -2,20 +2,22 @@ const Usuarios = () => {
   return (
     <table>
       <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
+        <th>ROL</th>
+        <th>NOMBRE</th>
+        <th>CORREO</th>
+        <th>TELEFONO</th>
+        <th>DIRECCION</th>
       </tr>
-      <button>añadir</button>
+
       <tr>
-        <td>Alfreds Futterkiste</td>
+        <td>USER</td>
         <td>Maria Anders</td>
-        <td>Germany</td>
+        <td>Germany@correo.com</td>
+        <td>3204828258</td>
+        <td>POR ALLI EN AQUEL ALTO</td>
       </tr>
       <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
+        <button>ELIMINAR USER</button>
       </tr>
     </table>
   );
