@@ -528,14 +528,14 @@ form label{
   
 .nous{
     padding: 2px;
-    margin: 5px 0;
+    margin: 5px 0 15px 0;
 }
 
 .form-info .btn{
-    margin: 10px 0px 10px 0;
+    margin: 50px 0px 10px 0;
     /* background-color: #9C27B0; */
     background-color: #000;
-    padding: 8px;
+    padding: 10px 10px;
     border-radius:4px;
     text-decoration: none;
     text-transform: uppercase;
