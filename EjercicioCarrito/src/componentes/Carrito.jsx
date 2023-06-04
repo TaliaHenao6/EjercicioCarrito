@@ -21,17 +21,17 @@ const Carrito = () => {
     return totalPrice.toLocaleString("es-CO");
   };
 
-  const formatUSD = (USD) =>{
-    return USD.toLocaleString("US")
-  }
+  const formatUSD = (USD) => {
+    return USD.toLocaleString("US");
+  };
 
-  const valorPagar = totalPrice.toString() 
-  const valorDolar = 4346.00;
+  const valorPagar = totalPrice.toString();
+  const valorDolar = 4346.0;
 
   const iva = totalPrice * 0.05;
   const total = totalPrice + iva;
 
-  const USD = total  / valorDolar;
+  const USD = total / valorDolar;
   const cleanCart = () => {
     if (
       confirm(
@@ -44,27 +44,24 @@ const Carrito = () => {
   };
 
   const initPayPalPayment = () => {
-    
-    window.paypal.Buttons({
+    window.paypal
+      .Buttons({
         createOrder: function (data, actions) {
-          
           return actions.order.create({
             purchase_units: [
-                {
-                  amount: {
-                    //currency_code: "COP",
-                    value: total, // Total a pagar en formato de decimales
+              {
+                amount: {
+                  //currency_code: "COP",
+                  value: total, // Total a pagar en formato de decimales
                 },
               },
             ],
           });
         },
         onApprove: function (data, actions) {
-         
           return actions.order.capture().then(function (details) {
-            
             console.log(details);
-            
+
             window.location.href = "/";
           });
         },
@@ -72,7 +69,9 @@ const Carrito = () => {
           // Se ejecuta en caso de error
           console.error(err);
           // Muestra un mensaje de error al usuario
-          alert("Ocurrió un error al procesar el pago. Por favor, inténtalo de nuevo.");
+          alert(
+            "Ocurrió un error al procesar el pago. Por favor, inténtalo de nuevo."
+          );
         },
       })
       .render("#paypal-button-container"); // ID del contenedor donde se mostrará el botón de PayPal
@@ -90,7 +89,7 @@ const Carrito = () => {
           ) : (
             <>
               <h2>No Has agregado productos al carrito aún!</h2>
-              <Link to="/">
+              <Link to="/Productos">
                 <Button variant="contained" color="secondary">
                   Comprar
                 </Button>
@@ -113,7 +112,7 @@ const Carrito = () => {
             <li>
               <p>IVA</p>
               <p className="left">{formatPrice(iva)}</p>
-              </li>
+            </li>
             <li className="resumen-total">
               <h3>USD</h3>
               <h3 className="left">$ {formatUSD(USD)} </h3>
@@ -143,7 +142,3 @@ const Carrito = () => {
 };
 
 export default Carrito;
-
-
-
-

@@ -8,11 +8,15 @@ const Footer = () => {
           <img src="./src/assets/electrotop.png" alt="Logo" />
         </div>
         <div className="footer-info">
-          <p>Número de contacto: +1 234 567 890</p>
           <p>¡Descubre las mejores ofertas!</p>
-          <p> Calle Principal 123, COLOMBIA PAPA!</p>
+
           <p>MAS QUE UN GRUPO UNA FAMILIA</p>
           <p>ESTAMOS MELOS, SISAS</p>
+          <p>2023</p>
+        </div>
+        <div className="footer-contacto">
+          <p>Número de contacto: +1 234 567 890</p>
+          <p> Calle Principal 123, COLOMBIA PAPA!</p>
         </div>
         <div className="footer-social">
           <a

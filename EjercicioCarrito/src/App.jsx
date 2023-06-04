@@ -10,7 +10,7 @@ import Perfil from "./componentes/Perfil";
 import Admin from "./componentes/Admin";
 import "@madzadev/audio-player/dist/index.css";
 import Player1 from "./componentes/Player";
-
+import Olvido from "./componentes/Olvido";
 
 import {
   Home,
@@ -19,6 +19,7 @@ import {
   AccountCircle,
   Boy,
   AdminPanelSettings,
+  Storefront,
 } from "@mui/icons-material";
 
 import "./componentes/styles.css";
@@ -62,7 +63,7 @@ function App() {
               <li>
                 <Link to="/Productos" className="link">
                   <span>Productos</span>&nbsp;
-                  {/* <Home /> */}
+                  <Storefront />
                 </Link>
               </li>
               <li>
@@ -117,6 +118,7 @@ function App() {
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
             <Route exact path="/Perfil" element={<Perfil />} />
+            <Route exact path="/Recuperar" element={<Olvido />} />
           </Routes>
         </Router>
       </CarritoProvider>

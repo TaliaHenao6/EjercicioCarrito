@@ -487,25 +487,41 @@ table {
   
   
 
-.form{
+  .form{
     width: 95%;
-    margin:  5px auto;
+    margin:  8px auto;
 }
+
+.hidden{
+    display: none;
+}
+
+.form-group {
+    width: 90%;
+    margin:  0px auto 12px auto;
+}
+
 
 form label{
     display: block;
     text-align: left;
-    padding-left:34px;
+    /* padding-left:34px; */
     margin-bottom: 5px;
     font-weight: 500;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
 
 .row {
+    width: 90%;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px auto 0px auto;
+}
+
+.row .col-6 {
+    flex: 0 0 50%;
+    max-width: 49%;
 }
 
 .info-login{
@@ -514,10 +530,10 @@ form label{
 }
 
 .input{
-    width: 80%;
-    padding: 8px;
+    width: 100%;
+    padding: 8px 10px;
     border: 1px solid #7B1FA2;
-    border-radius: 10px;
+    border-radius: 4px;
 }
  .input:focus{
     border: 1px solid rgba(0, 0, 0, 0.377);

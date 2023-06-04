@@ -105,7 +105,7 @@ const Register = () => {
       <div className="container">
         <h1>Crea una cuenta</h1>
         <form onSubmit={handleSubmit} className="form">
-          <div className="form-group">
+          <div className="form-group hidden">
             <label htmlFor="">Role:</label>
             <input
               type="text"
@@ -142,33 +142,35 @@ const Register = () => {
             />
             {errors.email && <p className="error-message">{errors.email}</p>}
           </div>
-          <div className="form-group">
-            <label htmlFor="phone">Teléfono:</label>
-            <input
-              className="input"
-              type="number"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleInputChange}
-              placeholder="Escribe tu teléfono"
-            />
-            {errors.phone && <p className="error-message">{errors.phone}</p>}
-          </div>
-          <div className="form-group">
-            <label htmlFor="address">Dirección:</label>
-            <input
-              className="input"
-              type="text"
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleInputChange}
-              placeholder="Escribe tu dirección"
-            />
-            {errors.address && (
-              <p className="error-message">{errors.address}</p>
-            )}
+          <div className="row">
+            <div className="form-group col-6">
+              <label htmlFor="phone">Teléfono:</label>
+              <input
+                className="input"
+                type="number"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                placeholder="Escribe tu teléfono"
+              />
+              {errors.phone && <p className="error-message">{errors.phone}</p>}
+            </div>
+            <div className="form-group col-6">
+              <label htmlFor="address">Dirección:</label>
+              <input
+                className="input"
+                type="text"
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleInputChange}
+                placeholder="Escribe tu dirección"
+              />
+              {errors.address && (
+                <p className="error-message">{errors.address}</p>
+              )}
+            </div>
           </div>
           <div className="form-group">
             <label htmlFor="password">Contraseña:</label>
