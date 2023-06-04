@@ -160,6 +160,15 @@ body{
 
 .item:hover .description{
     display: block;
+    transition: ease-in-out .10s;
+}
+
+.info-producto{
+    padding: 10px 10px 3px  10px;
+}
+
+.card-actions{
+    justify-content: center;
 }
 
 .name{
@@ -178,9 +187,11 @@ body{
     content: "$";
 }
 .description{
-    
     text-align: justify;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: "Noto-sans", sans-serif;
+    font-weight: 300;
+    line-height: 1;
     display: none;
 }
 .btncomp{
