@@ -15,8 +15,8 @@ import {
   Person2Outlined,
   Logout,
   AccountCircle,
-  Blind,
   Boy,
+  AdminPanelSettings,
 } from "@mui/icons-material";
 
 import "./componentes/styles.css";
@@ -52,46 +52,47 @@ function App() {
             </div>
             <ul className="nav">
               <li>
-                <Link to="/">
+                <Link to="/" className="link">
+                  <span>Home</span>&nbsp;
                   <Home />
                 </Link>
               </li>
               <li>
                 <Link to="/Carrito" className="link">
+                  <span>Carrito</span>&nbsp;
                   <NavCarrito />
                 </Link>
               </li>
-              <li>
-                {
-                  rol === "admin" && login === "true" ? (
-                    <Link to="/Admin">
-                      {" "}
-                      <Boy />
+              {
+                rol === "admin" && login === "true" ? (
+                  <li>
+                    <Link to="/Admin" className="link">
+                      <span>Panel</span>&nbsp;
+                      <AdminPanelSettings />
                     </Link>
-                  ) : (
-                    <span></span>
-                  ) //
-                }
-              </li>
+                  </li>
+                ) : null //
+              }
               <li>
                 {login === "true" ? (
-                  <Link to="/Perfil">
+                  <Link to="/Perfil" className="link">
+                    <span>Perfil</span>&nbsp;
                     <AccountCircle />
                   </Link>
                 ) : (
-                  <Link to="/Login">
+                  <Link to="/Login" className="link">
+                    <span>Login</span>&nbsp;
                     <Person2Outlined />
                   </Link>
                 )}
               </li>
               <li>
                 {login === "true" ? (
-                  <a>
-                    <Logout onClick={() => logout()} />
+                  <a className="link" onClick={() => logout()}>
+                    <span>Logout</span>&nbsp;
+                    <Logout />
                   </a>
-                ) : (
-                  <span></span>
-                )}
+                ) : null}
               </li>
             </ul>
           </div>
