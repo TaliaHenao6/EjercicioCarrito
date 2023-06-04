@@ -1,5 +1,6 @@
 import { Route, Link, Routes, BrowserRouter as Router } from "react-router-dom";
 // import "./App.css";
+import Principal from "./componentes/Principal";
 import Productos from "./componentes/Productos";
 import Carrito from "./componentes/Carrito";
 import Login from "./componentes/Login";
@@ -9,6 +10,7 @@ import Perfil from "./componentes/Perfil";
 import Admin from "./componentes/Admin";
 import "@madzadev/audio-player/dist/index.css";
 import Player1 from "./componentes/Player";
+
 
 import {
   Home,
@@ -58,6 +60,12 @@ function App() {
                 </Link>
               </li>
               <li>
+                <Link to="/Productos" className="link">
+                  <span>Productos</span>&nbsp;
+                  {/* <Home /> */}
+                </Link>
+              </li>
+              <li>
                 <Link to="/Carrito" className="link">
                   <span>Carrito</span>&nbsp;
                   <NavCarrito />
@@ -97,9 +105,10 @@ function App() {
             </ul>
           </div>
           <Routes>
+            <Route exact path="/" element={<Principal />} />
             <Route
               exact
-              path="/"
+              path="/Productos"
               element={<Productos ListaProductos={ListaProductos} />}
             />
 
