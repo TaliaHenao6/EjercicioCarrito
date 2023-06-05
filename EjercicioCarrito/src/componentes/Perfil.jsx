@@ -31,20 +31,20 @@ return (
       <div className="">
         <img src="./src/images/user.png" alt="User" />
       </div>
-      <div className="">
+      <div className="container">
         <strong>Nombre:</strong>
         {data.name}
       </div>
-      <div className="">
+      <div className="container">
         <strong>Teléfono:</strong> {data.phone}
       </div>
-      <div className="">
+      <div className="container">
         <strong>Dirección:</strong> {data.address}
       </div>
-      <div className="">
+      <div className="container">
         <strong>Email:</strong> {data.email}
       </div>
-      <div className="">
+      <div className="container">
         <strong>Rol:</strong> {data.role}
       </div>
     </div>

@@ -49,15 +49,25 @@ const Principal = () => {
           </div>
         ))}
       </Carousel> 
+    </div>
+    <section className='page'>
     </div> */}
     <div>
-        <h2>Descubre los mejores electrodomésticos para tu hogar</h2>
+        <center><h2>Descubre los mejores electrodomésticos para tu hogar</h2></center>
           <p>
           Contamos con electrodomésticos eficientes y de calidad para que puedas hacer tus tareas diarias de 
           manera más cómoda y eficiente. Si estás buscando los mejores electrodomésticos para tu hogar, has llegado 
           al lugar indicado.
           </p>
 
+          <div>
+        <center><h2>Descubre los mejores electrodomésticos para tu hogar</h2></center>
+          <p>
+          Contamos con electrodomésticos eficientes y de calidad para que puedas hacer tus tareas diarias de 
+          manera más cómoda y eficiente. Si estás buscando los mejores electrodomésticos para tu hogar, has llegado 
+          al lugar indicado.
+          </p>
+          </div>
     </div>
     <div>
         <h2></h2>
@@ -67,6 +77,7 @@ const Principal = () => {
 
     </div>
     </section>
+    //</section>
     
   );
 };
