@@ -90,6 +90,27 @@ const Login = () => {
     // //   .then((response) => {
   };
 
+  // Mostrar contraseña 
+ 
+
+  const mostrarPass = () => {
+     const inputPass = document.getElementById("password");
+    if (inputPass.type === "password"){
+      inputPass.type = "text";
+    }else{
+      inputPass.type = "password";
+    }
+  }
+  
+  // show.addEventListener("click", ()=> {
+  //   const inputPass = document.getElementById("inputPass");
+  //   if (inputPass.type === "password"){
+  //     inputPass.type = "text";
+  //   }else{
+  //     inputPass.type = "password";
+  //   }
+  // },0)
+
   return (
     <section className="main-container">
       <div className="container">
@@ -119,6 +140,16 @@ const Login = () => {
               onChange={handleInputChange}
               placeholder="Escribe tu contraseña"
             />
+            <div className="mostrar">
+            <input className="check"
+              type="checkbox"
+              name="check"
+              id="show"
+              onClick={() => mostrarPass()}
+            />
+            &nbsp;Mostrar contraseña
+
+            </div>
             {errors.password && (
               <p className="error-message">{errors.password}</p>
             )}

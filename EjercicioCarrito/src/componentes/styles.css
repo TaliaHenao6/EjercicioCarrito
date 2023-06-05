@@ -487,9 +487,9 @@ table {
   
   
 
-  .form{
+.form{
     width: 95%;
-    margin:  8px auto;
+    margin:  12px auto 6px auto;
 }
 
 .hidden{
@@ -531,13 +531,23 @@ form label{
 
 .input{
     width: 100%;
-    padding: 8px 10px;
+    padding: 9px 10px;
     border: 1px solid #7B1FA2;
     border-radius: 4px;
 }
+
  .input:focus{
     border: 1px solid rgba(0, 0, 0, 0.377);
  }
+
+.mostrar{
+    text-align: start;
+    font-size: 14px;
+}
+
+.mostrar .check{
+   margin: 12px 3px;
+}
 
 .button{
     background-color: #7B1FA2;
@@ -547,6 +557,10 @@ form label{
 .nous{
     padding: 2px;
     margin: 5px 0 15px 0;
+}
+
+.form-info{
+    padding-top: 10px;
 }
 
 .form-info .btn{
@@ -560,6 +574,10 @@ form label{
     font-size: 0.7rem;
     color: white;
     font-weight: 600;
+}
+
+.form-info .btn:hover{
+    background-color: #2e2e2e;
 }
 .error-message {
     color: red;
