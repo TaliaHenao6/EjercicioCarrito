@@ -62,12 +62,18 @@ const Productos2 = () => {
               {/* <img src={producto.image} alt="" /> */}
               {producto.image}
             </td>
-            <td>{producto.estado}</td>
+            {producto.visible == true ? <td>Disponible</td> : <th>No Disponible</th>}
+            
             <td className="">
               <Button variant="contained" size="small">
                 <Edit />
               </Button>
-              <Button variant="outlined" size="small" color="error" onClick={()=> disableProduct(producto.id)}>
+              <Button
+                variant="outlined"
+                size="small"
+                color="error"
+                onClick={() => disableProduct(producto.id)}
+              >
                 <Delete />{" "}
               </Button>
             </td>
