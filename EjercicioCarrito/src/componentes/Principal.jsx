@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     //height: '30vh',
     margin: '0 auto',
   },
+  
 }));
 
 const Principal = () => {
@@ -61,19 +62,47 @@ const Principal = () => {
         </p>
        
         </div>  
+        
       </div>
+      <div className='col-6'><h2 className='titul-home2'>-productos destacados-</h2></div>
+            
+              <div className="items-list2">
+                <div className="item-home"><a href="/Productos"><img className='item-homeimg' src="./src/images/licuadora.jpg" alt=""/></a> </div>
+                <div className="item-home"><a href="/Productos"><img className='item-homeimg' src="./src/images/estufa.jpg" alt=""/> </a> </div>
+                <div className="item-home"><a href="/Productos"><img className='item-homeimg' src="./src/images/nevera.jpg" alt=""/> </a> </div>
+                <div className="item-home"><a href="/Productos"><img className='item-homeimg' src="./src/images/cafetera.jpg" alt=""/></a>  </div>
+              </div>
+             
+             
+            
 
-      <div className='row2'>
-      <div className="col-6">
-        </div>  
-       <div className="col-6">
+
+
+      
+            
+      <div className='row'>
+        <div className="deshome col-6">
+        <h3>"Contamos con una amplia gama de electrodomésticos innovadores y eficientes energéticamente"</h3>
+          <p className='text-home' >Déjanos guiarte por nuestro vasto catálogo de electrodomésticos de última generación. 
+            Desde refrigeradores y lavadoras hasta televisores y sistemas de sonido, 
+            tenemos todo lo que necesitas para equipar tu hogar con lo mejor en tecnología y funcionalidad. <br /><br />
+            
+            Nuestros electrodomésticos no solo ofrecen un diseño elegante y moderno, 
+            sino que también están diseñados para adaptarse a tu estilo de vida ocupado. 
+            Con características innovadoras y eficiencia energética, 
+            puedes estar seguro de que estás invirtiendo en productos que te brindarán comodidad, ahorro de tiempo y recursos.
+            </p>
+
+        </div>
+      
+       <div className="deshome col-4">
         <form className="single-contact">
         <img src="./src/images/contact2.png" alt=""/> 
-          <h2>Suscríbete a nuestro Boletín informativo</h2>
-          <p>MANTENTE INFORMADO; sé el primero en enterarte de nuevos <br />productos,
+          <h2>Suscríbete a nuestro Boletín Informativo</h2>
+          <p>MANTENTE INFORMADO- sé el primero en enterarte de nuevos <br />productos,
              promociones y contenido exclusivo:</p>
-          <input className='input' type="email" placeholder="Email" />
-          <div className="form-info"><input className='btn-home' type="submit" value="Suscríbete" /></div>
+          <input className='input' type="email" placeholder="Correo electrónico" required />
+          <div className="form-info"><input className='btn-home' type="submit" value="Suscríbete ya!" /></div>
           
         </form></div> 
       </div>
