@@ -24,6 +24,12 @@ const Productos2 = () => {
 
   console.log(productos);
 
+
+  const disableProduct =(id) =>{
+    confirm("Los productos no seran eliminados!, pero desahabilitaran para los usarios , ¿DESEAS, CONTINUAR?")
+
+  }
+
   return (
     <>
       <Button
@@ -42,6 +48,7 @@ const Productos2 = () => {
           {/* <th>DESCRIPCION</th>s */}
           <th>PRECIO</th>
           <th>Ruta IMAGEN</th>
+          <th>ESTADO</th>
           <th>ACIONES</th>
         </tr>
         {productos.map((producto, index) => (
@@ -55,11 +62,12 @@ const Productos2 = () => {
               {/* <img src={producto.image} alt="" /> */}
               {producto.image}
             </td>
+            <td>{producto.estado}</td>
             <td className="">
               <Button variant="contained" size="small">
                 <Edit />
               </Button>
-              <Button variant="outlined" size="small" color="error">
+              <Button variant="outlined" size="small" color="error" onClick={()=> disableProduct(producto.id)}>
                 <Delete />{" "}
               </Button>
             </td>
