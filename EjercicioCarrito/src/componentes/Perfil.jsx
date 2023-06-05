@@ -27,7 +27,7 @@ const Perfil = () => {
 return (
   <section className="main-container">
     <div className="container">
-      <h2>My Profile</h2>
+      <h2>MI PERFIL</h2>
       <div className="">
         <img src="./src/images/user.png" alt="User" />
       </div>

@@ -79,7 +79,7 @@ const Carrito = () => {
 
   return (
     <section className="main-container">
-      <h1>Mi Carrito</h1>
+      <h2>MI CARRITO</h2>
       <div className="detalle-carrito">
         <div className="cart-productos">
           {carrito.length > 0 ? (
