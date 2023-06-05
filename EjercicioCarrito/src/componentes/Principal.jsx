@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
   carouselContainer: {
     width: '100%',
     maxWidth: '100%',
-    height: '30vh',
+    //height: '10vh',
     margin: '0 auto',
   },
 }));
@@ -16,9 +16,9 @@ const Principal = () => {
   const classes = useStyles();
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    './src/images/sale.jpg',
+    './src/images/principal.png',
+    './src/images/oferta.jpg',
     './src/images/electrodomesticos.jpg',
-    './src/images/electrodomesticos2.jpg',
     
   ];
 
@@ -50,14 +50,23 @@ const Principal = () => {
         ))}
       </Carousel> 
     </div>
+    <section className='page'>
     <div>
-        <h2>Descubre los mejores electrodomésticos para tu hogar</h2>
+        <center><h2>Descubre los mejores electrodomésticos para tu hogar</h2></center>
           <p>
           Contamos con electrodomésticos eficientes y de calidad para que puedas hacer tus tareas diarias de 
           manera más cómoda y eficiente. Si estás buscando los mejores electrodomésticos para tu hogar, has llegado 
           al lugar indicado.
           </p>
 
+          <div>
+        <center><h2>Descubre los mejores electrodomésticos para tu hogar</h2></center>
+          <p>
+          Contamos con electrodomésticos eficientes y de calidad para que puedas hacer tus tareas diarias de 
+          manera más cómoda y eficiente. Si estás buscando los mejores electrodomésticos para tu hogar, has llegado 
+          al lugar indicado.
+          </p>
+          </div>
     </div>
     <div>
         <h2></h2>
@@ -66,6 +75,7 @@ const Principal = () => {
           </p>
 
     </div>
+    </section>
     </section>
     
   );
