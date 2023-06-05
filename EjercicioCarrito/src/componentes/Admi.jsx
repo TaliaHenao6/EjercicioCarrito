@@ -8,7 +8,7 @@ import Producto from "./Producto";
 import Productos2 from "./admin/Productos2";
 import Usuarios from "./admin/Usuarios";
 import { Info } from "@mui/icons-material";
-import InfoPersonal from "./admin/InfoPersonal";
+import InfoPersonal from "./admin/Ventas";
 import "./styles.css";
 
 function TabPanel(props) {
@@ -70,11 +70,7 @@ export default function VerticalTabs() {
       >
         <Tab label="USUARIOS" {...a11yProps(0)} />
         <Tab label="PRODUCTOS" {...a11yProps(1)} />
-        <Tab label="INFORMACION PERSONAL" {...a11yProps(2)} />
-        {/* <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} /> */}
+        <Tab label="VENTAS" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
         <h3>USUARIOS</h3>
@@ -88,19 +84,6 @@ export default function VerticalTabs() {
         <h3>DATOS</h3>
         <InfoPersonal />
       </TabPanel>
-
-      {/* <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel> */}
     </Box>
   );
 }

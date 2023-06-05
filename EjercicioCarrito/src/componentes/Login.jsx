@@ -77,7 +77,7 @@ const Login = () => {
           localStorage.setItem("userId", respuesta.id);
           localStorage.setItem("role", respuesta.role);
           alert(`Bievenido: ${respuesta.name}`);
-          window.location.href = "/";
+          window.location.href = "/Productos";
         } else {
           alert("usuario  Y/O contraseña son incorrectos");
         }
