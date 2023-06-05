@@ -23,25 +23,32 @@ const ProductoCarrito = ({data}) => {
   };
 
   const addItemToCar = (idProducto) => {
-    setCarrito((currentItems) => {
-      const elementFound = currentItems.find(
-        (element) => element.id === idProducto
-      );
-      if (elementFound === undefined) {
-        return [...currentItems, { id: idProducto, infoProducto, cantidad: 1 }];
-      } else {
-        return currentItems.map((item) => {
-          if (item.id === idProducto) {
-            return { ...item, cantidad: item.cantidad + 1 };
-          } else {
-            return item;
-          }
-        });
-      }
-    });
+    alert("Vamos a sumar un producto");
+ 
+    if(data.infoProducto.id == idProducto){
+
+    }
+    
+    // setCarrito((currentItems) => {
+    //   const elementFound = currentItems.find(
+    //     (element) => element.id === idProducto
+    //   );
+    //   if (elementFound === undefined) {
+    //     return [...currentItems, { id: idProducto, infoProducto, cantidad: 1 }];
+    //   } else {
+    //     return currentItems.map((item) => {
+    //       if (item.id === idProducto) {
+    //         return { ...item, cantidad: item.cantidad + 1 };
+    //       } else {
+    //         return item;
+    //       }
+    //     });
+    //   }
+    // });
   };
 
   const removeFromCar = (idProducto) => {
+    alert("Vamos a restar un producto");
     setCarrito((currentItems) => {
       if (
         currentItems.find((element) => element.id === idProducto)?.cantidad ===
@@ -78,9 +85,9 @@ const ProductoCarrito = ({data}) => {
           </div>
           <div className="item-actions">
             <div className="cantidad-buttons">
-              <button className="btn" onClick={()=> {removeFromCar(data.idProducto.id)}}>-</button>
+              <button className="btn" onClick={()=> {removeFromCar(data.infoProducto.id)}}>-</button>
               <span>{cantidad}</span>
-              <button className="btn"  onClick={()=> {addItemToCar(data.idProducto.id)}}>+</button>
+              <button className="btn"  onClick={()=> {addItemToCar(data.infoProducto.id)}}>+</button>
             </div>
 
             <Button

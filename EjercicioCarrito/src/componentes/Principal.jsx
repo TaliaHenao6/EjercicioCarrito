@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+// import React, { useState, useEffect } from 'react';
+// import { makeStyles } from '@material-ui/core/styles';
+// import { Carousel } from 'react-responsive-carousel';
+// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-const useStyles = makeStyles(() => ({
-  carouselContainer: {
-    width: '100%',
-    maxWidth: '100%',
-    //height: '10vh',
-    margin: '0 auto',
-  },
-}));
+// const useStyles = makeStyles(() => ({
+//   carouselContainer: {
+//     width: '100%',
+//     maxWidth: '100%',
+//     height: '30vh',
+//     margin: '0 auto',
+//   },
+// }));
 
 const Principal = () => {
-  const classes = useStyles();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [
-    './src/images/principal.png',
-    './src/images/oferta.jpg',
-    './src/images/electrodomesticos.jpg',
+  // const classes = useStyles();
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const images = [
+  //   './src/images/sale.jpg',
+  //   './src/images/electrodomesticos.jpg',
+  //   './src/images/electrodomesticos2.jpg',
     
-  ];
+  // ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex((prevIndex) =>
+  //       prevIndex === images.length - 1 ? 0 : prevIndex + 1
+  //     );
+  //   }, 3000);
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+  //   return () => clearInterval(interval);
+  // }, [images.length]);
 
   return (
     <section className="principal">
-    <div className={classes.carouselContainer}>
+    {/* <div className={classes.carouselContainer}>
       <Carousel
         autoPlay={false}
         infiniteLoop={true}
@@ -51,6 +51,7 @@ const Principal = () => {
       </Carousel> 
     </div>
     <section className='page'>
+    </div> */}
     <div>
         <center><h2>Descubre los mejores electrodomésticos para tu hogar</h2></center>
           <p>
@@ -76,7 +77,7 @@ const Principal = () => {
 
     </div>
     </section>
-    </section>
+    //</section>
     
   );
 };

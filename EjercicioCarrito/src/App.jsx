@@ -10,15 +10,16 @@ import Perfil from "./componentes/Perfil";
 import Admin from "./componentes/Admin";
 import "@madzadev/audio-player/dist/index.css";
 import Player1 from "./componentes/Player";
-
+import Olvido from "./componentes/Olvido";
 
 import {
   Home,
   Person2Outlined,
   Logout,
   AccountCircle,
-  Blind,
   Boy,
+  AdminPanelSettings,
+  Storefront,
 } from "@mui/icons-material";
 
 import "./componentes/styles.css";
@@ -29,7 +30,7 @@ import CarritoProvider from "./context/CarritoContext";
 
 function App() {
   const login = localStorage.getItem("login");
-  const rol = localStorage.getItem("rol");
+  const rol = localStorage.getItem("role");
   const logout = () => {
     alert("Vas cerrar la sesión");
     localStorage.removeItem("login");
@@ -54,62 +55,70 @@ function App() {
             </div>
             <ul className="nav">
               <li>
-                <Link to="/Principal">
+                <Link to="/" className="link">
+                  <span>Home</span>&nbsp;
                   <Home />
                 </Link>
               </li>
               <li>
-                <Link to="/Carrito" className="link">
-                  <NavCarrito />
+                <Link to="/Productos" className="link">
+                  <span>Productos</span>&nbsp;
+                  <Storefront />
                 </Link>
               </li>
               <li>
-                {
-                  rol === "admin" && login === "true" ? (
-                    <Link to="/Admin">
-                      {" "}
-                      <Boy />
-                    </Link>
-                  ) : (
-                    <span></span>
-                  ) //
-                }
+                <Link to="/Carrito" className="link">
+                  <span>Carrito</span>&nbsp;
+                  <NavCarrito />
+                </Link>
               </li>
+              {
+                rol === "admin" && login === "true" ? (
+                  <li>
+                    <Link to="/Admin" className="link">
+                      <span>Panel</span>&nbsp;
+                      <AdminPanelSettings />
+                    </Link>
+                  </li>
+                ) : null //
+              }
               <li>
                 {login === "true" ? (
-                  <Link to="/Perfil">
+                  <Link to="/Perfil" className="link">
+                    <span>Perfil</span>&nbsp;
                     <AccountCircle />
                   </Link>
                 ) : (
-                  <Link to="/Login">
+                  <Link to="/Login" className="link">
+                    <span>Login</span>&nbsp;
                     <Person2Outlined />
                   </Link>
                 )}
               </li>
               <li>
                 {login === "true" ? (
-                  <a>
-                    <Logout onClick={() => logout()} />
+                  <a className="link" onClick={() => logout()}>
+                    <span>Logout</span>&nbsp;
+                    <Logout />
                   </a>
-                ) : (
-                  <span></span>
-                )}
+                ) : null}
               </li>
             </ul>
           </div>
           <Routes>
+            <Route exact path="/" element={<Principal />} />
             <Route
               exact
-              path="/"
+              path="/Productos"
               element={<Productos ListaProductos={ListaProductos} />}
             />
 
-            <Route exact path="/Principal" element={<Principal />} />
             <Route exact path="/Carrito" element={<Carrito />} />
             <Route exact path="/Admin" element={<Admin />} />
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/Register" element={<Register />} />
             <Route exact path="/Perfil" element={<Perfil />} />
+            <Route exact path="/Recuperar" element={<Olvido />} />
           </Routes>
         </Router>
       </CarritoProvider>

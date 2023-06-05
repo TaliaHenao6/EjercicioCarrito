@@ -37,44 +37,108 @@
       "role": "admin"
     },
     {
-      "name": "Pedrito",
-      "phone": "369852",
+      "name": "usuario",
+      "phone": "145896325",
       "address": "Colombia",
-      "email": "pedro@correo.com",
+      "email": "usuario@correo.com",
       "password": "123456",
-      "id": 5
-    },
-    {
-      "name": "juan",
-      "phone": "323585",
-      "address": "Colombia",
-      "email": "juan@correo.com",
-      "password": "123456",
-      "id": 6
-    },
-    {
-      "name": "Camilo",
-      "phone": "745279",
-      "address": "Colombia",
-      "email": "camilo@correo.com",
-      "password": "123456",
-      "id": 7
+      "role": "user",
+      "id": 10
     },
     {
       "name": "Leopoldo",
-      "phone": "8520017",
-      "address": "Colombia",
-      "email": "leopoldo@correo.com",
-      "password": "12456",
-      "id": 8
-    },
-    {
-      "name": "Leopoldo",
-      "phone": "8520017",
+      "phone": "105145010",
       "address": "Colombia",
       "email": "leopoldo@correo.com",
       "password": "123456",
-      "id": 9
+      "role": "user",
+      "id": 11
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Cafetera",
+      "descripcion": "La cafetera OSTER de 12 tazas con filtro permanente ofrece café recién hecho al instante.",
+      "precio": 205000,
+      "image": "/src/images/Cafetera.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Nevera",
+      "descripcion": "Su diseño moderno, elegante y sobrio proporciona una atractiva apariencia y mayor espacio interno.",
+      "precio": 1800582,
+      "image": "/src/images/nevera.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Lavadora",
+      "descripcion": "Lavadora con motor Digital Inverter de 20 años de garantía y función Speed Spray™ para ahorrar agua en el enjuague.",
+      "precio": 1500999,
+      "image": "/src/images/lavadora.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Licuadora",
+      "descripcion": "La Licuadora Infiny Force de Imusa, cuenta con un motor de alta velocidad y 10 funciones diferentes más la función pulso.",
+      "precio": 150482,
+      "image": "/src/images/licuadora.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Estufa",
+      "descripcion": "Estufa HACEB con mesa en acero inoxidable y encendido eléctrico. Con cuatro fogones de diferentes tamaños para versatilidad. ",
+      "precio": 842553,
+      "image": "/src/images/estufa.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Ventilador",
+      "descripcion": "Este ventilador de 18 pulgadas cuenta con 3 velocidades que permiten elegir el flujo de aire deseado.",
+      "precio": 120632,
+      "image": "/src/images/ventilador.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "Aire Acondicionado",
+      "descripcion": "Con el aire acondicionado MABE 12000 BTU Tipo Split Inverter blanco y gracias a la tecnología Ultra Clean Air.",
+      "precio": 902556,
+      "image": "/src/images/aire_acondicionado.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "Freidora",
+      "descripcion": "Con capacidad extra grande de 9L con revestimiento antiadherente DiamondForce, perfecta para toda la familia.",
+      "precio": 250665,
+      "image": "/src/images/freidora.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "Aspiradora",
+      "descripcion": "Aspiradora para polvo, pequeña, compacta, ideal para la casa, ahora podrás aspirar pisos láminados sin preocuparte.",
+      "precio": 405265,
+      "image": "/src/images/aspiradora.jpg"
+    },
+    {
+      "id": 10,
+      "nombre": "Equipo de Sonido",
+      "descripcion": "Aumenta el volumen de tu fiesta con el exclusivo SAMSUNG Giga Party Audio MX-T70.",
+      "precio": 2365559,
+      "image": "/src/images/equipo_sonido.jpg"
+    },
+    {
+      "id": 11,
+      "nombre": "Televisor",
+      "descripcion": "El televisor LG 75NANO75 trae a tu vida colores más puros e impresionantes por su tecnología Nanocell.",
+      "precio": 2789559,
+      "image": "/src/images/tv.jpg"
+    },
+    {
+      "id": 12,
+      "nombre": "LavaVajillas",
+      "descripcion": "Para mantener tu cocina organizada, cuenta con el Lavavajillas 70 piezas Electrolux.Económico y práctico. ",
+      "precio": 565559,
+      "image": "/src/images/lavavajillas.jpg"
     }
   ]
 }

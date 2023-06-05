@@ -5,13 +5,14 @@ import {
   CardContent,
   CardMedia,
 } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import {AddShoppingCart, Edit} from "@mui/icons-material/";
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 import Favorite from "./Heart";
 
 const Producto = ({ infoProducto }) => {
   const login = localStorage.getItem("login");
+  const role = localStorage.getItem("role");
   const [carrito, setCarrito] = useContext(CarritoContext);
   const idProducto = infoProducto.id;
 
@@ -75,21 +76,39 @@ const Producto = ({ infoProducto }) => {
           className="product-image"
         />
       </CardMedia>
-      <CardContent>
+      <CardContent className="info-producto">
         <h3 className="name">{infoProducto.nombre}</h3>
         <p className="price">{formatPrice(infoProducto.precio)}</p>
         <p className="description">{infoProducto.descripcion}</p>
       </CardContent>
       {login === "true" ? (
-        <CardActions>
+        <CardActions className="card-actions">
           <Button
             variant="contained"
             color="secondary"
-            startIcon={<AddShoppingCartIcon />}
+            size="large"
+            startIcon={<AddShoppingCart />}
             onClick={() => addToCar(infoProducto)}
           >
-            Añadir al carrito
+            {role === "user" ? (
+              <span>Añadir al carrito</span>
+            ) : (
+              <span>Añadir</span>
+            )}
           </Button>
+          {role === "admin" ? (
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              startIcon={<Edit />}
+              z
+              onClick={() => addToCar(infoProducto)}
+            >
+              Editar
+            </Button>
+          ) : null}
+
           {/* <Button
           variant="contained"
           color="error"
@@ -98,7 +117,7 @@ const Producto = ({ infoProducto }) => {
           >
           eliminar
         </Button> */}
-          <Favorite infoProducto={infoProducto} />
+          {/* <Favorite infoProducto={infoProducto} /> */}
         </CardActions>
       ) : (
         <CardActions>

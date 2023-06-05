@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import md5 from "md5";
+// import Olvido from "./Olvido";
 
 import { Button } from "@mui/material";
 
@@ -138,6 +139,9 @@ const Login = () => {
         {successMessage && <p className="success-message">{successMessage}</p>}
 
         <div className="form-info">
+          <a href="/Recuperar"> ¿Perdiste tu contraseña?</a>
+          {/* <Olvido /> */}
+
           <p className="nous">¿No tienes usuario para iniciar sesión?</p>
           <a className="btn" href="/Register">
             Registrarme ahora
