@@ -7,30 +7,6 @@ const Admin = () => {
       <div className="containers">
         <h1>MODO ADMINISTRADOR</h1>
         <Admi />
-        {/* <div className="ad">
-          <img src="./src/images/admin.jpg" alt="Admin" />
-        </div>
-        <div className="role">
-          <strong>ROL:</strong>
-        </div>
-        <div className="nam">
-          <strong>NOMBRE:</strong>
-          <div className="cor">
-            <strong>EMAIL:</strong>
-          </div>
-          <div className="max">
-            <button>AÑADIR PRODUCTO</button>
-          </div>
-          <div className="men">
-            <button>ELIMINAR PRODUCTOS</button>
-          </div>
-          <div className="see">
-            <button>VER USUARIOS</button>
-          </div>
-          <div className="add">
-            <button>AGREGAR USUARIOS</button>
-          </div>
-        </div> */}
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import {Delete, Edit, AddCircle} from "@mui/icons-material"
 
 
 const baseUrl = "http://localhost:3001/usuarios";
+const deleteUrl = "http://localhost:3001/usuarios/10";
 
 const Usuarios = () => {
   const [users, setUsers] = useState([]);
@@ -19,7 +20,27 @@ const Usuarios = () => {
       // const respuesta = response[0];
       setUsers(response.data);
     }).catch();
-  }, [idUser]);
+  }, [idUser, users]);
+
+
+  const removeUser = (id) =>{
+    if(confirm(`Deseas Eliminar al usuario con ID: ${id}`)){
+      // alert(`Vamos a eliminar el user:, ${id}`);
+      // useEffect(() => {
+        axios
+          .delete(`http://localhost:3001/usuarios/${id}`)
+          .then((response) => {
+            console.log(response.data);
+            alert("Eliminacion con exito");
+          })
+          .catch();
+        // }, [users])
+    }else{
+      alert("No se elimino nada");
+    }
+    // await
+       
+  }
 
   return (
     <>
@@ -55,7 +76,7 @@ const Usuarios = () => {
               <Button variant="contained" size="small">
                 <Edit />
               </Button>
-              <Button variant="outlined" size="small" color="error">
+              <Button variant="outlined" size="small" color="error" onClick={()=> removeUser(user.id)}>
                 <Delete />{" "}
               </Button>
             </td>

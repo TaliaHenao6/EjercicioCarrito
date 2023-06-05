@@ -60,7 +60,7 @@ export default function VerticalTabs() {
         height: 250,
       }}
     >
-      <Tabs
+      <Tabs  className="panel"
         orientation="vertical"
         variant="scrollable"
         value={value}
