@@ -37,22 +37,13 @@
       "role": "admin"
     },
     {
-      "name": "usuario",
-      "phone": "145896325",
+      "name": "pedro",
+      "phone": "80166",
       "address": "Colombia",
-      "email": "usuario@correo.com",
-      "password": "123456",
+      "email": "pedro@correo.com",
+      "password": "1236547",
       "role": "user",
-      "id": 10
-    },
-    {
-      "name": "Leopoldo",
-      "phone": "105145010",
-      "address": "Colombia",
-      "email": "leopoldo@correo.com",
-      "password": "123456",
-      "role": "user",
-      "id": 11
+      "id": 6
     }
   ],
   "productos": [
