@@ -84,13 +84,14 @@ const Register = () => {
   const signIn = async (data) => {
     try {
       const response = await axios.post(baseUrl, data);
-      if (response.data.length > 0) {
-        const resultado = response.data[0];
+      console.log(response);
+      if (response.status == 201 || response.status == 200) {
+        const resultado = response.data;
         localStorage.setItem("login", true);
         localStorage.setItem("userId", resultado.id);
         localStorage.setItem("role", resultado.role);
         alert(`Bienvenido: ${resultado.name}`);
-        window.location.href = "/";
+        window.location.href = "/Productos";
         console.log(response.data);
       } else {
         alert("FALLO EL REGISTRO");
