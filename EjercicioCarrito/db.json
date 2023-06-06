@@ -136,12 +136,20 @@
       "visible": true
     },
     {
-      "id": 12,
       "nombre": "LavaVajillas",
       "descripcion": "Para mantener tu cocina organizada, cuenta con el Lavavajillas 70 piezas Electrolux.Económico y práctico. ",
-      "precio": 565559,
       "image": "/src/images/lavavajillas.jpg",
-      "visible": true
+      "precio": 565559,
+      "visible": false,
+      "id": 12
+    },
+    {
+      "nombre": "Lava Vajillas",
+      "descripcion": "Para mantener tu cocina organizada, cuenta con el Lavavajillas 70 piezas Electrolux.Económico y práctico. ",
+      "image": "/src/images/lavavajillas.jpg",
+      "precio": 565559,
+      "visible": false,
+      "id": 13
     }
   ]
 }
