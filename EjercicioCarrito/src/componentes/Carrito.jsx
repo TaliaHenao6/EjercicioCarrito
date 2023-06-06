@@ -130,7 +130,7 @@ const Carrito = () => {
             >
               Procesar compra
             </Button>
-            <Button variant="outlined" size="small" onClick={() => cleanCart()}>
+            <Button variant="contained" color="secondary" size="small" onClick={() => cleanCart()}>
               Limpiar carrito
             </Button>
           </div>

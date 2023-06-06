@@ -47,7 +47,7 @@ function App() {
               <a href={"/"}>
                 <img
                   src="./src/assets/electrotop.png"
-                  alt="BackPackers"
+                  alt="electrotop"
                   className="logo-image"
                 />
               </a>
@@ -98,7 +98,7 @@ function App() {
               <li>
                 {login === "true" ? (
                   <a className="link" onClick={() => logout()}>
-                    <span>Logout</span>&nbsp;
+                    <span>Salir</span>&nbsp;
                     <Logout />
                   </a>
                 ) : null}
