@@ -3,7 +3,6 @@
 // import { Carousel } from 'react-responsive-carousel';
 // import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-<<<<<<< HEAD
 // const useStyles = makeStyles(() => ({
 //   carouselContainer: {
 //     width: '100%',
@@ -12,17 +11,6 @@
 //     margin: '0 auto',
 //   },
 // }));
-=======
-const useStyles = makeStyles(() => ({
-  carouselContainer: {
-    width: '100%',
-    maxWidth: '100%',
-    //height: '30vh',
-    margin: '0 auto',
-  },
-  
-}));
->>>>>>> 9764069f03fa81d7d27e7a76f33c048990f25753
 
 const Principal = () => {
   // const classes = useStyles();
