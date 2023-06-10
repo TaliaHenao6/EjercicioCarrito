@@ -7,7 +7,7 @@ import Login from "./componentes/Login";
 import NavCarrito from "./componentes/NavCarrito";
 import Register from "./componentes/Register";
 import Perfil from "./componentes/Perfil";
-import Admin from "./componentes/Admin";
+import Dashboard from "./componentes/Dashboard";
 import PanelAdmin from "./componentes/admin/PanelAdmin";
 
 
@@ -31,6 +31,9 @@ import ListaProductos from "./productos.json";
 
 // Importamos el useContext
 import CarritoProvider from "./context/CarritoContext";
+import Usuarios from "./componentes/admin/Usuarios";
+import Productos2 from "./componentes/admin/Productos2";
+import Ventas from "./componentes/admin/Ventas";
 
 function App() {
   const login = localStorage.getItem("login");
@@ -79,7 +82,7 @@ function App() {
               {
                 rol === "admin" && login === "true" ? (
                   <li>
-                    <Link to="/Admin" className="link">
+                    <Link to="/Dashboard" className="link">
                       <span>Panel</span>&nbsp;
                       <AdminPanelSettings />
                     </Link>
@@ -110,7 +113,10 @@ function App() {
             </ul>
           </div>
           <div className="wrap-container">
-            <PanelAdmin />
+            {rol === "admin" && login === "true" ? 
+              <PanelAdmin />
+            
+            : null}
             <Routes>
               <Route exact path="/" element={<Principal />} />
               <Route
@@ -120,11 +126,14 @@ function App() {
               />
 
               <Route exact path="/Carrito" element={<Carrito />} />
-              <Route exact path="/Admin" element={<Admin />} />
-              <Route exact path="/Login" element={<Login />} />
-              <Route exact path="/Register" element={<Register />} />
+              <Route exact path="/Dashboard" element={<Dashboard />} />
+              <Route exact path="/Usuarios" element={<Usuarios />} />
+              <Route exact path="/Panel-Productos" element={<Productos2 />} />
+              <Route exact path="/Ventas" element={<Ventas />} />
               <Route exact path="/Perfil" element={<Perfil />} />
+              <Route exact path="/Login" element={<Login />} />
               <Route exact path="/Recuperar" element={<Olvido />} />
+              <Route exact path="/Register" element={<Register />} />
             </Routes>
           </div>
         </Router>

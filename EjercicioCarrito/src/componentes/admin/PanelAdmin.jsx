@@ -8,7 +8,7 @@ const PanelAdmin = ()=>{
         <nav className="">
           <ul>
             <li>
-              <Link to="/Admin" className="link">
+              <Link to="/Dashboard" className="link">
                 <Dashboard />
                 <span>&nbsp;Dashboard</span>
               </Link>
@@ -20,7 +20,7 @@ const PanelAdmin = ()=>{
               </Link>
             </li>
             <li>
-              <Link to="/Productos" className="link">
+              <Link to="/Panel-Productos" className="link">
                 <Category />
                 <span>&nbsp;Productos</span>
               </Link>

@@ -78,7 +78,7 @@ const Login = () => {
           localStorage.setItem("role", respuesta.role);
           alert(`Bievenido: ${respuesta.name}`);
           if (respuesta.role === "admin"){
-            window.location.href = "/Admin";
+            window.location.href = "/Dashboard";
           }else{
             window.location.href = "/Productos"
           }
