@@ -1,5 +1,7 @@
 const Ventas = () => {
   return (
+    <div className="main-container">
+      <h1>Ventas</h1>
     <table>
       <tr>
         <th>NOMBRE</th>
@@ -14,6 +16,7 @@ const Ventas = () => {
       </tr>
       <tr></tr>
     </table>
+    </div>
   );
 };
 export default Ventas;
