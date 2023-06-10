@@ -9,6 +9,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
     <Player1 />
-    <Footer />
+    {/* <Footer /> */}
   </React.StrictMode>
 );

@@ -8,7 +8,11 @@ import NavCarrito from "./componentes/NavCarrito";
 import Register from "./componentes/Register";
 import Perfil from "./componentes/Perfil";
 import Admin from "./componentes/Admin";
+import PanelAdmin from "./componentes/admin/PanelAdmin";
+
+
 import "@madzadev/audio-player/dist/index.css";
+
 import Player1 from "./componentes/Player";
 import Olvido from "./componentes/Olvido";
 
@@ -41,7 +45,7 @@ function App() {
     <>
       <CarritoProvider>
         <Router>
-          <div className="header">
+          <div className="header nav">
             <div className="logo">
               {/* <Link to={"/"}> */}
               <a href={"/"}>
@@ -105,21 +109,24 @@ function App() {
               </li>
             </ul>
           </div>
-          <Routes>
-            <Route exact path="/" element={<Principal />} />
-            <Route
-              exact
-              path="/Productos"
-              element={<Productos ListaProductos={ListaProductos} />}
-            />
+          <div className="wrap-container">
+            <PanelAdmin />
+            <Routes>
+              <Route exact path="/" element={<Principal />} />
+              <Route
+                exact
+                path="/Productos"
+                element={<Productos ListaProductos={ListaProductos} />}
+              />
 
-            <Route exact path="/Carrito" element={<Carrito />} />
-            <Route exact path="/Admin" element={<Admin />} />
-            <Route exact path="/Login" element={<Login />} />
-            <Route exact path="/Register" element={<Register />} />
-            <Route exact path="/Perfil" element={<Perfil />} />
-            <Route exact path="/Recuperar" element={<Olvido />} />
-          </Routes>
+              <Route exact path="/Carrito" element={<Carrito />} />
+              <Route exact path="/Admin" element={<Admin />} />
+              <Route exact path="/Login" element={<Login />} />
+              <Route exact path="/Register" element={<Register />} />
+              <Route exact path="/Perfil" element={<Perfil />} />
+              <Route exact path="/Recuperar" element={<Olvido />} />
+            </Routes>
+          </div>
         </Router>
       </CarritoProvider>
     </>
