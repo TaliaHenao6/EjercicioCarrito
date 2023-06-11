@@ -1,3 +1,5 @@
+@import url("../assets/CSS/color.css");
+
 *{
     top: 0;
     left: 0;
@@ -5,8 +7,7 @@
     font-family: sans-serif;
 }
 body{
-    background-color: #ececec;
-    /* background-color: #242424; */
+    background-color: var(--bg-gray);
 }
 
 .music{
@@ -15,12 +16,12 @@ body{
 /* app */
 .header{
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-white);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.377) ;
-    box-shadow: 0px 2px  4px  0px rgba(0, 0, 0, 0.178);
+    border-bottom: 1px solid var(--bdr-dark1) ;
+    box-shadow: 0px 2px  4px  0px var(--bs-dark);
     padding:  0px 40px;
 
 }
@@ -74,7 +75,7 @@ body{
 
 
 .header a{
-    color: #000;
+    color: var;
     padding: 7px 10px;
     border-radius: 4px;
     text-align: center;
@@ -82,8 +83,8 @@ body{
 }
 .header ul li a:hover{
     cursor: pointer;
-    color: #7B1FA2;
-    border: 1px solid #7B1FA2;
+    color: var(--bg-purple);
+    border: 1px solid var(--bg-purple);
     transition: ease-out all .15s;
 }
 
@@ -99,9 +100,9 @@ body{
 }
 
 .bubbleAlert {
-    background-color: #7B1FA2;
+    background-color: var(--bg-purple);
     border-radius: 50px;
-    color: #FFF;
+    color: var(--bg-white);
     padding: 2px 0px;
     font-size: 0.9rem;
     width: 20px;
@@ -122,9 +123,9 @@ body{
 .nav-admin{
   min-height: 100vh;
   height: auto;
-  background-color: rgb(255, 255, 255);
-  border-right: 1px solid rgba(0, 0, 0, 0.377) ;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+  background-color: var(--bg-white);
+  border-right: 1px solid var(--bdr-dark1) ;
+  border-bottom: 1px solid var(--bdr-dark1);
 }
 
 .nav-admin nav{
@@ -167,8 +168,8 @@ body{
 
 .nav-admin ul li .link:hover{
   transition: ease-in all .45s;
-  color: #7B1FA2;
-  border-left: 2px solid #7B1FA2;
+  color: var(--bg-purple);
+  border-left: 2px solid var(--bg-purple);
   background-color: rgb(241, 239, 239) ;
  }
 
@@ -208,9 +209,9 @@ body{
 .item-home{
   width: 300px;
   height: 300px;
-  background-color: #FFF;
+  background-color: var(--bg-white);
   border-radius: 8px;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.377);
+  box-shadow: 0px 4px 8px 0px var(--bdr-dark1);
   text-align: center;
   padding: 15px;
 }
@@ -287,11 +288,10 @@ body{
     display: none;
 }
 .btncomp{
-    color: rgb(56, 142, 60);
+    color: var(--bg-green);
     width: 100%;
     padding: 8px;
-    /*border: 2px solid rgb(56, 142, 60);*/
-    border: 2px solid #2E7D32;
+    border: 2px solid var(--bg-green);
     border-radius: 6px;
     font-weight: 600;
 }
@@ -318,10 +318,10 @@ body{
     width: 100%;
     display: flex;
     margin: 5px 0;
-    border: 1px solid rgba(0, 0, 0, 0.178);
+    border: 1px solid var(--bs-dark);
     padding: 8px;
     border-radius: 6px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-white);
     align-items: center;
 }
 
@@ -358,7 +358,7 @@ body{
 }   
  .item-text .text-precio{
     margin: 0;
-    color: #272424;
+    color: var(--text-black2);
     margin-bottom: 3px;
     font-weight: 600;
     font-style: italic;
@@ -375,7 +375,7 @@ body{
     padding: 5px 0px 2px 0px;
     font-weight: 500;
     font-size: 1rem;
-    border-bottom:1px solid #000 ;
+    border-bottom:1px solid var(--bg-black) ;
  }
  
  .cantidad-buttons .btn{
@@ -386,7 +386,7 @@ body{
     margin:0px 3px 
  }
 .cantidad-buttons .btn:hover{
-  background-color: #cfcfcf;
+  background-color: var(--bg-gray2);
   cursor: pointer;
   border-radius: 6px;
 }
@@ -404,8 +404,8 @@ body{
 
 .resumen-container{
     min-width: 350px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(0, 0, 0, 0.377);
+    background-color: var(--bg-white);
+    border: 1px solid var(--bdr-dark1);
     border-radius: 4px;
     padding: 0 10px;
     height: 100%;
@@ -416,7 +416,7 @@ body{
     text-transform: uppercase;
     font-size: 1rem;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+    border-bottom: 1px solid var(--bdr-dark1);
 }
 .resumen{
     text-align: start;
@@ -431,7 +431,7 @@ body{
 .resumen li{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+    border-bottom: 1px solid var(--bdr-dark1);
 }
 .resumen p{
     display: inline-block;
@@ -473,8 +473,8 @@ body{
 
 .precio-total {
 	border: none;
-	background-color: #000;
-	color: #fff;
+	background-color: var(--bg-black);
+	color: var(--bg-white);
 	padding: 15px 0;
 	display: block;
 	width: 100%;
@@ -483,14 +483,14 @@ body{
 	border-bottom-right-radius: 10px;
 	font-family: inherit;
 	cursor: pointer;
-    font-size: 16px;
-    transition: all .3s ease;
+  font-size: 16px;
+  transition: all .3s ease;
 }
 
 .vaciar-carrito {
 	border: none;
-	background-color: #000;
-	color: #fff;
+	background-color: var(--bg-black);
+	color: var(--bg-white);
     padding: 10px;
     margin-top: 10px;
     margin-bottom: auto;
@@ -499,8 +499,8 @@ body{
 
 .pagar {
 	border: none;
-	background-color: #000;
-	color: #fff;
+	background-color: var(--bg-black);
+	color: var(--bg-white);
     padding: 10px;
 
 }
@@ -512,7 +512,7 @@ body{
     border-radius: 4px;
     max-width: 400px;
     padding: 10px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.377);
+    box-shadow: 0px 4px 8px 0px var(--bdr-dark1);
   }
 /*admin*/
 
@@ -535,7 +535,7 @@ td {
 }
 
 th {
-  background-color: #9DB2BF;
+  background-color: var(--bg-blue-light);
 }
 
 button {
@@ -543,7 +543,7 @@ button {
   margin-top: 10px;
   padding: 8px 12px;
   background-color: #9370db; /* Color lila */
-  color: black; /* Color de texto negro */
+  color: var(--bg-black); /* Color de texto negro */
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -551,7 +551,7 @@ button {
 }
 
 button:hover {
-  background-color: #9DB2BF; /* Color lila oscuro */
+  background-color: var(--bg-blue-light); /* Color lila oscuro */
 }
 
 table {
@@ -569,7 +569,7 @@ th {
 }
 
 tr:nth-child(even) {
-  background-color: #FFF;
+  background-color: var(--bg-white);
   height: 60px;
 }
 
@@ -643,10 +643,10 @@ form label{
     line-height: 1.5;
     font-weight: 500;
     padding: 35px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-white);
     margin-top: 43px;
     border-radius: 6px;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.377);
+    box-shadow: 0px 4px 8px 0px var(--bdr-dark1);
 
 }
 
@@ -670,25 +670,25 @@ form label{
 .btn-home{
     margin-top: 20px;
     width: 100%;
-    background-color: #000;
+    background-color: var(--bg-black);
     padding: 10px 10px;
     border-radius:4px;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.7rem;
-    color: white;
+    color: var(--text-white);
     font-weight: 600;
 }
 
 .input{
     width: 100%;
     padding: 9px 10px;
-    border: 1px solid #7B1FA2;
+    border: 1px solid var(--bg-purple);
     border-radius: 4px;
 }
 
  .input:focus{
-    border: 1px solid rgba(0, 0, 0, 0.377);
+    border: 1px solid var(--bdr-dark1);
  }
 
 .mostrar{
@@ -701,7 +701,7 @@ form label{
 }
 
 .button{
-    background-color: #7B1FA2;
+    background-color: var(--bg-purple);
     
 }
   
@@ -717,13 +717,13 @@ form label{
 .form-info .btn{
     margin: 50px 0px 10px 0;
     /* background-color: #9C27B0; */
-    background-color: #000;
+    background-color: var(--bg-black);
     padding: 10px 10px;
     border-radius:4px;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.7rem;
-    color: white;
+    color: var(--text-white);
     font-weight: 600;
 }
 
@@ -731,22 +731,22 @@ form label{
     background-color: #2e2e2e;
 }
 .error-message {
-    color: red;
+    color: var(--bg-red);
   }
   
 .success-message {
-    color: green;
+    color: var(--bg-green);
   }
 
 /* .container2 {
     max-width: 400px;
     margin: 0 auto;
-    background-color: red;
+    background-color: var(--bg-red);
   } */
 
 
 .login {
-    color: #7B1FA2;
+    color: var(--bg-purple);
     padding: 18px;
   }
 
@@ -777,25 +777,25 @@ form label{
 
 .paypal::before{
     content: "";
-    background-color: rgba(0, 0, 0, 0.377);
+    background-color: var(--bdr-dark1);
     width: 100%;
     height: 100%;
 }
 
 .container{
     padding: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--bg-white);
     text-align: center;
 }
 .footer {
-    background-color: #9DB2BF;
-    color: #fff;
+    background-color: var(--bg-blue-light);
+    color: var(--bg-white);
     padding: 20px;
     position:relative;
     left: 0;
     bottom: 0;
     width: 100%;
-    border-top: 1px solid rgba(0, 0, 0, 0.377);
+    border-top: 1px solid var(--bdr-dark1);
   }
   
   .footer-content {
@@ -823,12 +823,12 @@ form label{
   }
 
   .footer-info a:hover{
-    color:  #7B1FA2;
+    color:  var(--bg-purple);
     font-size: 20px;
 }
 
 .footer-contacto a:hover{
-  color:  #7B1FA2;
+  color:  var(--bg-purple);
   font-size: 20px;
 }
   
@@ -839,14 +839,14 @@ form label{
   }
   
   .footer-social a {
-    color: #fff;
+    color: var(--bg-white);
     margin: 0 10px;
     font-size: 28px;
     transition: color 0.3s ease-in-out;
   }
   
   .footer-social a:hover {
-    color: #7B1FA2;
+    color: var(--bg-purple);
   }
   
   /*responsi*/
@@ -856,12 +856,7 @@ form label{
     box-sizing: border-box;
     font-family: sans-serif;
   }
-  
-  body {
-    background-color: #ececec;
-    /* background-color: #242424; */
-  }
-  
+    
   /* ... otros estilos ... */
   
   @media (max-width: 768px) {

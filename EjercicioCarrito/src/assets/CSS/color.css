@@ -1,0 +1,27 @@
+:root{
+    --bg-dark: #242424;
+
+    --bg-gray: #ececec;
+    --bg-gray2:#cfcfcf;
+
+    --bg-white: #FFFFFF;
+    --text-white: #FFFFFF;
+
+    --bg-purple:#7B1FA2;
+
+    --bdr-dark1: rgba(0, 0, 0, 0.377);
+     
+    --bs-dark:rgba(0, 0, 0, 0.178);
+
+    --bg-black: #000000;
+    --text-black2: #272424;
+
+    --bg-green: #2E7D32;
+
+    --bg-green2: #388e3c;
+
+    --bg-blue-light:#9DB2BF;
+
+    --bg-red: #ff0000;
+
+}
