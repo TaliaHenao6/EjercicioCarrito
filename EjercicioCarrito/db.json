@@ -96,12 +96,12 @@
       "visible": true
     },
     {
-      "id": 7,
       "nombre": "Aire Acondicionado",
       "descripcion": "Con el aire acondicionado MABE 12000 BTU Tipo Split Inverter blanco y gracias a la tecnología Ultra Clean Air.",
-      "precio": 902556,
       "image": "/src/images/aire_acondicionado.jpg",
-      "visible": true
+      "precio": 902556,
+      "visible": false,
+      "id": 7
     },
     {
       "id": 8,
