@@ -20,7 +20,7 @@ const Productos2 = () => {
         setProductos(response.data);
       })
       .catch();
-  }, [idUser]);
+  }, [idUser, productos]);
 
   console.log(productos);
 
@@ -42,7 +42,7 @@ const Productos2 = () => {
           .then((response) => {
             console.log(response.data);
             alert("se modifico con exito!");
-            window.location.href = "/Admin";
+            // window.location.href = "/Panel-Productos";
           }).catch;
       } else {
       }
@@ -60,13 +60,14 @@ const Productos2 = () => {
           .then((response) => {
             console.log(response.data);
             alert("se modifico con exito!");
-            window.location.href = "/Admin";
+            // window.location.reload();
           }).catch;
     };
 
 
   return (
-    <>
+    <section className="main-container">
+      <h1>Panel de Productos</h1>
       <Button
         variant="contained"
         color="success"
@@ -78,7 +79,7 @@ const Productos2 = () => {
       <table>
         <tr>
           <th>#</th>
-          <th>id</th>
+          {/* <th>id</th> */}
           <th>NOMBRE</th>
           {/* <th>DESCRIPCION</th>s */}
           <th>PRECIO</th>
@@ -89,7 +90,7 @@ const Productos2 = () => {
         {productos.map((producto, index) => (
           <tr key={index}>
             <td>{index + 1}</td>
-            <td>{producto.id}</td>
+            {/* <td>{producto.id}</td> */}
             <td>{producto.nombre}</td>
             {/* <td>id{producto.descripcion}</td> */}
             <td>{producto.precio}</td>
@@ -146,7 +147,7 @@ const Productos2 = () => {
           </tr>
         ))}
       </table>
-    </>
+    </section>
   );
 };
 export default Productos2;

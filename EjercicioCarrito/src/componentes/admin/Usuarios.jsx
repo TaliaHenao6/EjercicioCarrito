@@ -43,7 +43,8 @@ const Usuarios = () => {
   }
 
   return (
-    <>
+    <section className="main-container">
+      <h1>Usuarios</h1>
       <Button
         variant="contained"
         color="success"
@@ -55,7 +56,7 @@ const Usuarios = () => {
       <table>
         <tr>
           <th>#</th>
-          <th>ID</th>
+          {/* <th>ID</th> */}
           <th>NOMBRE</th>
           <th>CORREO</th>
           <th>TELEFONO</th>
@@ -66,7 +67,7 @@ const Usuarios = () => {
         {users.map((user, index) => (
           <tr key={index}>
             <td>{index + 1}</td>
-            <td>{user.id}</td>
+            {/* <td>{user.id}</td> */}
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.phone}</td>
@@ -84,7 +85,7 @@ const Usuarios = () => {
         ))}
       </table>
       
-    </>
+    </section>
   );
 };
 export default Usuarios;

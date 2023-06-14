@@ -113,6 +113,65 @@ body{
     top: -2px;
 }
 
+/* Aside  menu lateral */
+.wrap-container{
+  display: flex;
+  height: 100;
+}
+
+.nav-admin{
+  min-height: 100vh;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  border-right: 1px solid rgba(0, 0, 0, 0.377) ;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.377);
+}
+
+.nav-admin nav{
+  text-align: left;
+  height: 100%;
+  /* transition: ease-in-out all .55s; */
+  transition: box-shadow .08s linear, min-width .15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-admin nav:hover li span{
+  display: block;
+  text-transform: capitalize;
+}
+
+.nav-admin nav ul{
+  padding: 5px;
+} 
+
+.nav-admin ul li{
+  display: flex;
+  list-style-type: none; 
+  gap: 5px;
+  cursor: pointer;
+}
+.nav-admin ul li .link{
+  padding: 7px 10px;
+  margin-top: 5px;
+  border-radius: 0px 4px 4px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-admin ul li span{
+  display:none;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-family: "Noto-sans", sans-serif;
+}
+
+.nav-admin ul li .link:hover{
+  transition: ease-in all .45s;
+  color: #7B1FA2;
+  border-left: 2px solid #7B1FA2;
+  background-color: rgb(241, 239, 239) ;
+ }
+
 .main-container{
     padding: 0px 20px;
     text-align: center;

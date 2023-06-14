@@ -7,8 +7,12 @@ import Login from "./componentes/Login";
 import NavCarrito from "./componentes/NavCarrito";
 import Register from "./componentes/Register";
 import Perfil from "./componentes/Perfil";
-import Admin from "./componentes/Admin";
+import Dashboard from "./componentes/Dashboard";
+import PanelAdmin from "./componentes/admin/PanelAdmin";
+
+
 import "@madzadev/audio-player/dist/index.css";
+
 import Player1 from "./componentes/Player";
 import Olvido from "./componentes/Olvido";
 
@@ -27,6 +31,9 @@ import ListaProductos from "./productos.json";
 
 // Importamos el useContext
 import CarritoProvider from "./context/CarritoContext";
+import Usuarios from "./componentes/admin/Usuarios";
+import Productos2 from "./componentes/admin/Productos2";
+import Ventas from "./componentes/admin/Ventas";
 
 function App() {
   const login = localStorage.getItem("login");
@@ -41,7 +48,7 @@ function App() {
     <>
       <CarritoProvider>
         <Router>
-          <div className="header">
+          <div className="header nav">
             <div className="logo">
               {/* <Link to={"/"}> */}
               <a href={"/"}>
@@ -75,7 +82,7 @@ function App() {
               {
                 rol === "admin" && login === "true" ? (
                   <li>
-                    <Link to="/Admin" className="link">
+                    <Link to="/Dashboard" className="link">
                       <span>Panel</span>&nbsp;
                       <AdminPanelSettings />
                     </Link>
@@ -105,21 +112,30 @@ function App() {
               </li>
             </ul>
           </div>
-          <Routes>
-            <Route exact path="/" element={<Principal />} />
-            <Route
-              exact
-              path="/Productos"
-              element={<Productos ListaProductos={ListaProductos} />}
-            />
+          <div className="wrap-container">
+            {rol === "admin" && login === "true" ? 
+              <PanelAdmin />
+            
+            : null}
+            <Routes>
+              <Route exact path="/" element={<Principal />} />
+              <Route
+                exact
+                path="/Productos"
+                element={<Productos ListaProductos={ListaProductos} />}
+              />
 
-            <Route exact path="/Carrito" element={<Carrito />} />
-            <Route exact path="/Admin" element={<Admin />} />
-            <Route exact path="/Login" element={<Login />} />
-            <Route exact path="/Register" element={<Register />} />
-            <Route exact path="/Perfil" element={<Perfil />} />
-            <Route exact path="/Recuperar" element={<Olvido />} />
-          </Routes>
+              <Route exact path="/Carrito" element={<Carrito />} />
+              <Route exact path="/Dashboard" element={<Dashboard />} />
+              <Route exact path="/Usuarios" element={<Usuarios />} />
+              <Route exact path="/Panel-Productos" element={<Productos2 />} />
+              <Route exact path="/Ventas" element={<Ventas />} />
+              <Route exact path="/Perfil" element={<Perfil />} />
+              <Route exact path="/Login" element={<Login />} />
+              <Route exact path="/Recuperar" element={<Olvido />} />
+              <Route exact path="/Register" element={<Register />} />
+            </Routes>
+          </div>
         </Router>
       </CarritoProvider>
     </>
