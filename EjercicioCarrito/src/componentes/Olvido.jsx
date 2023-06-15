@@ -32,7 +32,7 @@ const Olvido = () => {
     <section className="main-container">
       <div className="container">
         <h1>RECUPERAR CONTRASEÑA</h1>
-        <h3>Tiene que ir al médico, qué memoria tan mala</h3>
+        <p>Tiene que ir al médico, qué memoria tan mala</p>
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Correo Electrónico:</label>
